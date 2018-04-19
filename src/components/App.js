@@ -7,6 +7,7 @@ import { withRouter, Route, Switch } from 'react-router';
 import About from './about/About';
 import NotFoundPage from './error/NotFoundPage';
 import Workout from './workout/Workout';
+import WorkoutsPage from './workout/WorkoutsPage';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,7 +20,8 @@ class App extends React.Component {
         <Switch>
           <Route path="/" component={HomePage} exact />
           <Route path="/about" component={About}/>
-          <Route path="/workouts" component={Workout}/>
+          <Route path="/workouts" component={WorkoutsPage}/>
+          <Route path="/workouts/:id" component={Workout}/>
           <Route path="*" component={NotFoundPage} />
         </Switch>
       </div>

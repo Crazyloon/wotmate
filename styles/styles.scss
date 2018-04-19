@@ -1,3 +1,8 @@
+@import '../node_modules/bootstrap/scss/_functions.scss';
+@import '../node_modules/bootstrap/scss/_custom-variables.scss';
+@import '../node_modules/bootstrap/scss/_variables.scss';
+
+
 caption{
   display: table-caption;
   caption-side: top;
@@ -10,4 +15,48 @@ caption{
 
 .pageNotFound{
   margin-top: 200px;
+}
+
+.page-workouts__header{
+  border-top: 5px solid #349421;
+  padding: 8px 10px 8px 10px;
+  background-color: darken($body-bg, 10%);
+  height: 60px;
+  display: flex;
+  justify-content: flex-end; 
+}
+
+.workouts__container{
+  margin-top: 20px;
+}
+
+.workout__container{
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.workout__title{
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.workout__actions{
+  display: flex;
+  justify-content: space-around;  
+}
+
+[class*="btn-"].bevel:focus{
+  box-shadow: $btn-bevel-down;
+}
+[class*="btn-"].bevel:active:focus{
+  padding-top: $btn-padding-y * 1.2;
+  padding-left: $btn-padding-x * 1.0909;
+  padding-right: $btn-padding-x / 1.0909;
+  padding-bottom: $btn-padding-y / 1.2;
+  box-shadow: $btn-bevel-up !important;
+}
+
+.bevel{
+  box-shadow: $btn-bevel-down;
 }

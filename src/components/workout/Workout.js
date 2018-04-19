@@ -3,45 +3,46 @@ import { connect } from 'react-redux';
 import { withRouter, Route, Switch } from 'react-router';
 import PropTypes from 'prop-types';
 
+const Workout = ({workout}) => {
 
-class Workout extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      
-    };
+  function formatTime(timestamp){
+    return timestamp.toLocaleTimeString([], {month: 'long', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit'});
   }
 
-  render() {
-    console.log(this.props);
-    return (
-      <div className="container">
-        <table className="table table-striped table-bordered">
-          <caption visible="false">{this.props.workout.name}</caption>
-          <thead className="thead-light">
-            <tr>
-              <th>Exercise</th>
-              <th>Reps</th>
-              <th>Weight</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.props.workout.exercises.map((exercise, index) => {
-                return(
-                <tr key={index}>
-                  <td>{exercise.name}</td>
-                  <td>{exercise.reps}</td>
-                  <td>{exercise.weight}</td>
-                </tr>
-                );
-              })
-            }
-          </tbody>
-        </table>
+  return(
+    <div className="container workout__container">
+      <div className="workout__title">
+        {workout.name} - {formatTime(workout.date)}
       </div>
-    );
-  }
-}
+      <table className="table table-striped table-bordered">
+        <caption hidden="true">{workout.name}</caption>
+        <thead className="thead-light">
+          <tr>
+            <th>Exercise</th>
+            <th>Reps</th>
+            <th>Weight</th>
+          </tr>
+        </thead>
+        <tbody>
+          {workout.exercises.map((exercise, index) => {
+              return(
+              <tr key={index}>
+                <td>{exercise.name}</td>
+                <td>{exercise.reps}</td>
+                <td>{exercise.weight}</td>
+              </tr>
+              );
+            })
+          }
+        </tbody>
+      </table>
+      <div className="workout__actions">
+          <button className="btn btn-secondary bevel">✍️ Edit</button>
+          <button className="btn btn-danger bevel">💣 Delete</button>
+      </div>
+    </div>
+  );
+};
 
 Workout.propTypes = {
   workout: PropTypes.object.isRequired
@@ -57,10 +58,4 @@ Workout.defaultProps = {
   }
 };
 
-function mapStateToProps(state, ownprops){
-  return{
-    workout: state.workouts.workout001
-  };
-}
-
-export default withRouter(connect(mapStateToProps)(Workout));
+export default Workout;
