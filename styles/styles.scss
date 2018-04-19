@@ -27,12 +27,16 @@ caption{
 }
 
 .workouts__container{
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
 .workout__container{
   padding: 20px;
-  border-radius: 5px;
+  box-shadow: 2px 2px 10px -1px #141719;
+  border: 1px solid #9a9a9a;
+  &:not(first){
+    margin-top: 20px;
+  }
 }
 
 .workout__title{
