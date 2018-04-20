@@ -1,0 +1,1274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table renders with headingData and rowData under each heading 1`] = `
+ReactWrapper {
+  "length": 1,
+  Symbol(enzyme.__unrendered__): <Table
+    headingData={
+      Array [
+        "h1",
+        "h2",
+        "h3",
+      ]
+    }
+    rowData={
+      Array [
+        Object {
+          "a": "one",
+          "b": "two",
+          "c": "three",
+        },
+        Object {
+          "a": "four",
+          "b": "five",
+          "c": "six",
+        },
+        Object {
+          "a": "seven",
+          "b": "eight",
+          "c": "nine",
+        },
+      ]
+    }
+    rowKeys={
+      Array [
+        "a",
+        "b",
+        "c",
+      ]
+    }
+    title="Table Title"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "headingData": Array [
+        "h1",
+        "h2",
+        "h3",
+      ],
+      "rowData": Array [
+        Object {
+          "a": "one",
+          "b": "two",
+          "c": "three",
+        },
+        Object {
+          "a": "four",
+          "b": "five",
+          "c": "six",
+        },
+        Object {
+          "a": "seven",
+          "b": "eight",
+          "c": "nine",
+        },
+      ],
+      "rowKeys": Array [
+        "a",
+        "b",
+        "c",
+      ],
+      "title": "Table Title",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": <table
+        class="table table-striped table-bordered"
+      >
+        <caption
+          hidden=""
+        >
+          Table Title
+        </caption>
+        <thead
+          class="thead-light"
+        >
+          <tr>
+            <th>
+              h1
+            </th>
+            <th>
+              h2
+            </th>
+            <th>
+              h3
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              one
+            </td>
+            <td>
+              two
+            </td>
+            <td>
+              three
+            </td>
+          </tr>
+          <tr>
+            <td>
+              four
+            </td>
+            <td>
+              five
+            </td>
+            <td>
+              six
+            </td>
+          </tr>
+          <tr>
+            <td>
+              seven
+            </td>
+            <td>
+              eight
+            </td>
+            <td>
+              nine
+            </td>
+          </tr>
+        </tbody>
+      </table>,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <caption
+            hidden="true"
+          >
+            Table Title
+          </caption>,
+          <thead
+            className="thead-light"
+          >
+            <tr>
+              <th>
+                h1
+              </th>
+              <th>
+                h2
+              </th>
+              <th>
+                h3
+              </th>
+            </tr>
+          </thead>,
+          <tbody>
+            <tr>
+              <td>
+                one
+              </td>
+              <td>
+                two
+              </td>
+              <td>
+                three
+              </td>
+            </tr>
+            <tr>
+              <td>
+                four
+              </td>
+              <td>
+                five
+              </td>
+              <td>
+                six
+              </td>
+            </tr>
+            <tr>
+              <td>
+                seven
+              </td>
+              <td>
+                eight
+              </td>
+              <td>
+                nine
+              </td>
+            </tr>
+          </tbody>,
+        ],
+        "className": "table table-striped table-bordered",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": <caption
+            hidden=""
+          >
+            Table Title
+          </caption>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Table Title",
+            "hidden": "true",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Table Title",
+          ],
+          "type": "caption",
+        },
+        Object {
+          "instance": <thead
+            class="thead-light"
+          >
+            <tr>
+              <th>
+                h1
+              </th>
+              <th>
+                h2
+              </th>
+              <th>
+                h3
+              </th>
+            </tr>
+          </thead>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <tr>
+              <th>
+                h1
+              </th>
+              <th>
+                h2
+              </th>
+              <th>
+                h3
+              </th>
+            </tr>,
+            "className": "thead-light",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": <tr>
+                <th>
+                  h1
+                </th>
+                <th>
+                  h2
+                </th>
+                <th>
+                  h3
+                </th>
+              </tr>,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <th>
+                    h1
+                  </th>,
+                  <th>
+                    h2
+                  </th>,
+                  <th>
+                    h3
+                  </th>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": <th>
+                    h1
+                  </th>,
+                  "key": "0",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "h1",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "h1",
+                  ],
+                  "type": "th",
+                },
+                Object {
+                  "instance": <th>
+                    h2
+                  </th>,
+                  "key": "1",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "h2",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "h2",
+                  ],
+                  "type": "th",
+                },
+                Object {
+                  "instance": <th>
+                    h3
+                  </th>,
+                  "key": "2",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "h3",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "h3",
+                  ],
+                  "type": "th",
+                },
+              ],
+              "type": "tr",
+            },
+          ],
+          "type": "thead",
+        },
+        Object {
+          "instance": <tbody>
+            <tr>
+              <td>
+                one
+              </td>
+              <td>
+                two
+              </td>
+              <td>
+                three
+              </td>
+            </tr>
+            <tr>
+              <td>
+                four
+              </td>
+              <td>
+                five
+              </td>
+              <td>
+                six
+              </td>
+            </tr>
+            <tr>
+              <td>
+                seven
+              </td>
+              <td>
+                eight
+              </td>
+              <td>
+                nine
+              </td>
+            </tr>
+          </tbody>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <tr>
+                <td>
+                  one
+                </td>
+                <td>
+                  two
+                </td>
+                <td>
+                  three
+                </td>
+              </tr>,
+              <tr>
+                <td>
+                  four
+                </td>
+                <td>
+                  five
+                </td>
+                <td>
+                  six
+                </td>
+              </tr>,
+              <tr>
+                <td>
+                  seven
+                </td>
+                <td>
+                  eight
+                </td>
+                <td>
+                  nine
+                </td>
+              </tr>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": <tr>
+                <td>
+                  one
+                </td>
+                <td>
+                  two
+                </td>
+                <td>
+                  three
+                </td>
+              </tr>,
+              "key": "0",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <td>
+                    one
+                  </td>,
+                  <td>
+                    two
+                  </td>,
+                  <td>
+                    three
+                  </td>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": <td>
+                    one
+                  </td>,
+                  "key": "0",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "one",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "one",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": <td>
+                    two
+                  </td>,
+                  "key": "1",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "two",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "two",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": <td>
+                    three
+                  </td>,
+                  "key": "2",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "three",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "three",
+                  ],
+                  "type": "td",
+                },
+              ],
+              "type": "tr",
+            },
+            Object {
+              "instance": <tr>
+                <td>
+                  four
+                </td>
+                <td>
+                  five
+                </td>
+                <td>
+                  six
+                </td>
+              </tr>,
+              "key": "1",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <td>
+                    four
+                  </td>,
+                  <td>
+                    five
+                  </td>,
+                  <td>
+                    six
+                  </td>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": <td>
+                    four
+                  </td>,
+                  "key": "0",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "four",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "four",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": <td>
+                    five
+                  </td>,
+                  "key": "1",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "five",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "five",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": <td>
+                    six
+                  </td>,
+                  "key": "2",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "six",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "six",
+                  ],
+                  "type": "td",
+                },
+              ],
+              "type": "tr",
+            },
+            Object {
+              "instance": <tr>
+                <td>
+                  seven
+                </td>
+                <td>
+                  eight
+                </td>
+                <td>
+                  nine
+                </td>
+              </tr>,
+              "key": "2",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <td>
+                    seven
+                  </td>,
+                  <td>
+                    eight
+                  </td>,
+                  <td>
+                    nine
+                  </td>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": <td>
+                    seven
+                  </td>,
+                  "key": "0",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "seven",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "seven",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": <td>
+                    eight
+                  </td>,
+                  "key": "1",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "eight",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "eight",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": <td>
+                    nine
+                  </td>,
+                  "key": "2",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "nine",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "nine",
+                  ],
+                  "type": "td",
+                },
+              ],
+              "type": "tr",
+            },
+          ],
+          "type": "tbody",
+        },
+      ],
+      "type": "table",
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "headingData": Array [
+          "h1",
+          "h2",
+          "h3",
+        ],
+        "rowData": Array [
+          Object {
+            "a": "one",
+            "b": "two",
+            "c": "three",
+          },
+          Object {
+            "a": "four",
+            "b": "five",
+            "c": "six",
+          },
+          Object {
+            "a": "seven",
+            "b": "eight",
+            "c": "nine",
+          },
+        ],
+        "rowKeys": Array [
+          "a",
+          "b",
+          "c",
+        ],
+        "title": "Table Title",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": <table
+          class="table table-striped table-bordered"
+        >
+          <caption
+            hidden=""
+          >
+            Table Title
+          </caption>
+          <thead
+            class="thead-light"
+          >
+            <tr>
+              <th>
+                h1
+              </th>
+              <th>
+                h2
+              </th>
+              <th>
+                h3
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                one
+              </td>
+              <td>
+                two
+              </td>
+              <td>
+                three
+              </td>
+            </tr>
+            <tr>
+              <td>
+                four
+              </td>
+              <td>
+                five
+              </td>
+              <td>
+                six
+              </td>
+            </tr>
+            <tr>
+              <td>
+                seven
+              </td>
+              <td>
+                eight
+              </td>
+              <td>
+                nine
+              </td>
+            </tr>
+          </tbody>
+        </table>,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <caption
+              hidden="true"
+            >
+              Table Title
+            </caption>,
+            <thead
+              className="thead-light"
+            >
+              <tr>
+                <th>
+                  h1
+                </th>
+                <th>
+                  h2
+                </th>
+                <th>
+                  h3
+                </th>
+              </tr>
+            </thead>,
+            <tbody>
+              <tr>
+                <td>
+                  one
+                </td>
+                <td>
+                  two
+                </td>
+                <td>
+                  three
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  four
+                </td>
+                <td>
+                  five
+                </td>
+                <td>
+                  six
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  seven
+                </td>
+                <td>
+                  eight
+                </td>
+                <td>
+                  nine
+                </td>
+              </tr>
+            </tbody>,
+          ],
+          "className": "table table-striped table-bordered",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": <caption
+              hidden=""
+            >
+              Table Title
+            </caption>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Table Title",
+              "hidden": "true",
+            },
+            "ref": null,
+            "rendered": Array [
+              "Table Title",
+            ],
+            "type": "caption",
+          },
+          Object {
+            "instance": <thead
+              class="thead-light"
+            >
+              <tr>
+                <th>
+                  h1
+                </th>
+                <th>
+                  h2
+                </th>
+                <th>
+                  h3
+                </th>
+              </tr>
+            </thead>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <tr>
+                <th>
+                  h1
+                </th>
+                <th>
+                  h2
+                </th>
+                <th>
+                  h3
+                </th>
+              </tr>,
+              "className": "thead-light",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": <tr>
+                  <th>
+                    h1
+                  </th>
+                  <th>
+                    h2
+                  </th>
+                  <th>
+                    h3
+                  </th>
+                </tr>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <th>
+                      h1
+                    </th>,
+                    <th>
+                      h2
+                    </th>,
+                    <th>
+                      h3
+                    </th>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": <th>
+                      h1
+                    </th>,
+                    "key": "0",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "h1",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "h1",
+                    ],
+                    "type": "th",
+                  },
+                  Object {
+                    "instance": <th>
+                      h2
+                    </th>,
+                    "key": "1",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "h2",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "h2",
+                    ],
+                    "type": "th",
+                  },
+                  Object {
+                    "instance": <th>
+                      h3
+                    </th>,
+                    "key": "2",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "h3",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "h3",
+                    ],
+                    "type": "th",
+                  },
+                ],
+                "type": "tr",
+              },
+            ],
+            "type": "thead",
+          },
+          Object {
+            "instance": <tbody>
+              <tr>
+                <td>
+                  one
+                </td>
+                <td>
+                  two
+                </td>
+                <td>
+                  three
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  four
+                </td>
+                <td>
+                  five
+                </td>
+                <td>
+                  six
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  seven
+                </td>
+                <td>
+                  eight
+                </td>
+                <td>
+                  nine
+                </td>
+              </tr>
+            </tbody>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <tr>
+                  <td>
+                    one
+                  </td>
+                  <td>
+                    two
+                  </td>
+                  <td>
+                    three
+                  </td>
+                </tr>,
+                <tr>
+                  <td>
+                    four
+                  </td>
+                  <td>
+                    five
+                  </td>
+                  <td>
+                    six
+                  </td>
+                </tr>,
+                <tr>
+                  <td>
+                    seven
+                  </td>
+                  <td>
+                    eight
+                  </td>
+                  <td>
+                    nine
+                  </td>
+                </tr>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": <tr>
+                  <td>
+                    one
+                  </td>
+                  <td>
+                    two
+                  </td>
+                  <td>
+                    three
+                  </td>
+                </tr>,
+                "key": "0",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <td>
+                      one
+                    </td>,
+                    <td>
+                      two
+                    </td>,
+                    <td>
+                      three
+                    </td>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": <td>
+                      one
+                    </td>,
+                    "key": "0",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "one",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "one",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": <td>
+                      two
+                    </td>,
+                    "key": "1",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "two",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "two",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": <td>
+                      three
+                    </td>,
+                    "key": "2",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "three",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "three",
+                    ],
+                    "type": "td",
+                  },
+                ],
+                "type": "tr",
+              },
+              Object {
+                "instance": <tr>
+                  <td>
+                    four
+                  </td>
+                  <td>
+                    five
+                  </td>
+                  <td>
+                    six
+                  </td>
+                </tr>,
+                "key": "1",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <td>
+                      four
+                    </td>,
+                    <td>
+                      five
+                    </td>,
+                    <td>
+                      six
+                    </td>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": <td>
+                      four
+                    </td>,
+                    "key": "0",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "four",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "four",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": <td>
+                      five
+                    </td>,
+                    "key": "1",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "five",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "five",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": <td>
+                      six
+                    </td>,
+                    "key": "2",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "six",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "six",
+                    ],
+                    "type": "td",
+                  },
+                ],
+                "type": "tr",
+              },
+              Object {
+                "instance": <tr>
+                  <td>
+                    seven
+                  </td>
+                  <td>
+                    eight
+                  </td>
+                  <td>
+                    nine
+                  </td>
+                </tr>,
+                "key": "2",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <td>
+                      seven
+                    </td>,
+                    <td>
+                      eight
+                    </td>,
+                    <td>
+                      nine
+                    </td>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": <td>
+                      seven
+                    </td>,
+                    "key": "0",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "seven",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "seven",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": <td>
+                      eight
+                    </td>,
+                    "key": "1",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "eight",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "eight",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": <td>
+                      nine
+                    </td>,
+                    "key": "2",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "nine",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "nine",
+                    ],
+                    "type": "td",
+                  },
+                ],
+                "type": "tr",
+              },
+            ],
+            "type": "tbody",
+          },
+        ],
+        "type": "table",
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

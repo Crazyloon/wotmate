@@ -8,7 +8,8 @@
     "start": "npm-run-all --parallel open:src lint:watch",
     "open:src": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
-    "lint:watch": "npm run lint -- --watch"
+    "lint:watch": "npm run lint -- --watch",
+    "test": "jest --watch"
   },
   "author": "Russell Dow",
   "license": "MIT",
@@ -38,6 +39,8 @@
     "colors": "^1.2.1",
     "cross-env": "^5.1.4",
     "css-loader": "^0.28.11",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
     "eslint-plugin-import": "^2.10.0",
     "eslint-plugin-react": "^7.7.0",
@@ -52,6 +55,7 @@
     "npm-run-all": "^4.1.2",
     "open": "0.0.5",
     "prop-types": "^15.6.1",
+    "react-addons-test-utils": "^15.6.2",
     "redux-immutable-state-invariant": "^2.1.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^6.0.7",

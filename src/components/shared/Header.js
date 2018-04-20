@@ -26,11 +26,5 @@ const Header = () => {
     </nav>
   );
 };
-
-function mapStateToProps(state, ownprops){
-  return{
-    workouts: state.workouts
-  };
-}
  
-export default connect(mapStateToProps)(Header);
+export default Header;

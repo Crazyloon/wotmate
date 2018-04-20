@@ -7,11 +7,8 @@ import { connect } from "react-redux";
 class WorkoutsPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      workouts: []
-    };
   }
-  render() {     
+  render() {
     return (
       <div>
         <div className="col-xs-12 page-workouts__header">
@@ -27,10 +24,6 @@ class WorkoutsPage extends React.Component {
 
 WorkoutsPage.propTypes = {
   workouts: PropTypes.array.isRequired
-};
-
-WorkoutsPage.defaultProps = {
-  workouts: []
 };
 
 function mapStateToProps(state, ownProps){

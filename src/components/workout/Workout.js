@@ -7,9 +7,7 @@ import Table from '../shared/Table';
 const Workout = ({workout}) => {
   return(
     <div className="container workout__container">
-      <div className="workout__title">
-        {workout.name} - {formatTime(workout.date)}
-      </div>
+      <h5>{workout.name} - {formatTime(workout.date)}</h5>
       <Table title={workout.name} headingData={["Exercise", "Reps", "Weight"]} rowData={workout.exercises} rowKeys={["name", "reps", "weight"]} />    
       <div className="workout__actions">
           <button className="btn btn-secondary bevel">✍️ Edit</button>

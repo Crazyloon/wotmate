@@ -1,0 +1,1545 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Workout matches last snapshot 1`] = `
+ReactWrapper {
+  "length": 1,
+  Symbol(enzyme.__unrendered__): <Workout
+    workout={
+      Object {
+        "date": 2018-04-15T20:00:00.000Z,
+        "exercises": Array [
+          Object {
+            "name": "Squat",
+            "reps": 8,
+            "set": 1,
+            "weight": 145,
+          },
+          Object {
+            "name": "Lunge",
+            "reps": 8,
+            "set": 1,
+            "weight": 80,
+          },
+        ],
+        "id": "workout0001",
+        "muscles": Array [
+          "Glutes",
+          "Quads",
+        ],
+        "name": "Legs",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "workout": Object {
+        "date": 2018-04-15T20:00:00.000Z,
+        "exercises": Array [
+          Object {
+            "name": "Squat",
+            "reps": 8,
+            "set": 1,
+            "weight": 145,
+          },
+          Object {
+            "name": "Lunge",
+            "reps": 8,
+            "set": 1,
+            "weight": 80,
+          },
+        ],
+        "id": "workout0001",
+        "muscles": Array [
+          "Glutes",
+          "Quads",
+        ],
+        "name": "Legs",
+      },
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": <div
+        class="container workout__container"
+      >
+        <h5>
+          Legs
+           - 
+          April 15, 2018, 1:00 PM
+        </h5>
+        <table
+          class="table table-striped table-bordered"
+        >
+          <caption
+            hidden=""
+          >
+            Legs
+          </caption>
+          <thead
+            class="thead-light"
+          >
+            <tr>
+              <th>
+                Exercise
+              </th>
+              <th>
+                Reps
+              </th>
+              <th>
+                Weight
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Squat
+              </td>
+              <td>
+                8
+              </td>
+              <td>
+                145
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Lunge
+              </td>
+              <td>
+                8
+              </td>
+              <td>
+                80
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div
+          class="workout__actions"
+        >
+          <button
+            class="btn btn-secondary bevel"
+          >
+            ✍️ Edit
+          </button>
+          <button
+            class="btn btn-danger bevel"
+          >
+            💣 Delete
+          </button>
+        </div>
+      </div>,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h5>
+            Legs
+             - 
+            April 15, 2018, 1:00 PM
+          </h5>,
+          <Table
+            headingData={
+              Array [
+                "Exercise",
+                "Reps",
+                "Weight",
+              ]
+            }
+            rowData={
+              Array [
+                Object {
+                  "name": "Squat",
+                  "reps": 8,
+                  "set": 1,
+                  "weight": 145,
+                },
+                Object {
+                  "name": "Lunge",
+                  "reps": 8,
+                  "set": 1,
+                  "weight": 80,
+                },
+              ]
+            }
+            rowKeys={
+              Array [
+                "name",
+                "reps",
+                "weight",
+              ]
+            }
+            title="Legs"
+          />,
+          <div
+            className="workout__actions"
+          >
+            <button
+              className="btn btn-secondary bevel"
+            >
+              ✍️ Edit
+            </button>
+            <button
+              className="btn btn-danger bevel"
+            >
+              💣 Delete
+            </button>
+          </div>,
+        ],
+        "className": "container workout__container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": <h5>
+            Legs
+             - 
+            April 15, 2018, 1:00 PM
+          </h5>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Legs",
+              " - ",
+              "April 15, 2018, 1:00 PM",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Legs",
+            " - ",
+            "April 15, 2018, 1:00 PM",
+          ],
+          "type": "h5",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "headingData": Array [
+              "Exercise",
+              "Reps",
+              "Weight",
+            ],
+            "rowData": Array [
+              Object {
+                "name": "Squat",
+                "reps": 8,
+                "set": 1,
+                "weight": 145,
+              },
+              Object {
+                "name": "Lunge",
+                "reps": 8,
+                "set": 1,
+                "weight": 80,
+              },
+            ],
+            "rowKeys": Array [
+              "name",
+              "reps",
+              "weight",
+            ],
+            "title": "Legs",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": <table
+              class="table table-striped table-bordered"
+            >
+              <caption
+                hidden=""
+              >
+                Legs
+              </caption>
+              <thead
+                class="thead-light"
+              >
+                <tr>
+                  <th>
+                    Exercise
+                  </th>
+                  <th>
+                    Reps
+                  </th>
+                  <th>
+                    Weight
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Squat
+                  </td>
+                  <td>
+                    8
+                  </td>
+                  <td>
+                    145
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Lunge
+                  </td>
+                  <td>
+                    8
+                  </td>
+                  <td>
+                    80
+                  </td>
+                </tr>
+              </tbody>
+            </table>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <caption
+                  hidden="true"
+                >
+                  Legs
+                </caption>,
+                <thead
+                  className="thead-light"
+                >
+                  <tr>
+                    <th>
+                      Exercise
+                    </th>
+                    <th>
+                      Reps
+                    </th>
+                    <th>
+                      Weight
+                    </th>
+                  </tr>
+                </thead>,
+                <tbody>
+                  <tr>
+                    <td>
+                      Squat
+                    </td>
+                    <td>
+                      8
+                    </td>
+                    <td>
+                      145
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Lunge
+                    </td>
+                    <td>
+                      8
+                    </td>
+                    <td>
+                      80
+                    </td>
+                  </tr>
+                </tbody>,
+              ],
+              "className": "table table-striped table-bordered",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": <caption
+                  hidden=""
+                >
+                  Legs
+                </caption>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Legs",
+                  "hidden": "true",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Legs",
+                ],
+                "type": "caption",
+              },
+              Object {
+                "instance": <thead
+                  class="thead-light"
+                >
+                  <tr>
+                    <th>
+                      Exercise
+                    </th>
+                    <th>
+                      Reps
+                    </th>
+                    <th>
+                      Weight
+                    </th>
+                  </tr>
+                </thead>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <tr>
+                    <th>
+                      Exercise
+                    </th>
+                    <th>
+                      Reps
+                    </th>
+                    <th>
+                      Weight
+                    </th>
+                  </tr>,
+                  "className": "thead-light",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": <tr>
+                      <th>
+                        Exercise
+                      </th>
+                      <th>
+                        Reps
+                      </th>
+                      <th>
+                        Weight
+                      </th>
+                    </tr>,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <th>
+                          Exercise
+                        </th>,
+                        <th>
+                          Reps
+                        </th>,
+                        <th>
+                          Weight
+                        </th>,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": <th>
+                          Exercise
+                        </th>,
+                        "key": "0",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Exercise",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          "Exercise",
+                        ],
+                        "type": "th",
+                      },
+                      Object {
+                        "instance": <th>
+                          Reps
+                        </th>,
+                        "key": "1",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Reps",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          "Reps",
+                        ],
+                        "type": "th",
+                      },
+                      Object {
+                        "instance": <th>
+                          Weight
+                        </th>,
+                        "key": "2",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Weight",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          "Weight",
+                        ],
+                        "type": "th",
+                      },
+                    ],
+                    "type": "tr",
+                  },
+                ],
+                "type": "thead",
+              },
+              Object {
+                "instance": <tbody>
+                  <tr>
+                    <td>
+                      Squat
+                    </td>
+                    <td>
+                      8
+                    </td>
+                    <td>
+                      145
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Lunge
+                    </td>
+                    <td>
+                      8
+                    </td>
+                    <td>
+                      80
+                    </td>
+                  </tr>
+                </tbody>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <tr>
+                      <td>
+                        Squat
+                      </td>
+                      <td>
+                        8
+                      </td>
+                      <td>
+                        145
+                      </td>
+                    </tr>,
+                    <tr>
+                      <td>
+                        Lunge
+                      </td>
+                      <td>
+                        8
+                      </td>
+                      <td>
+                        80
+                      </td>
+                    </tr>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": <tr>
+                      <td>
+                        Squat
+                      </td>
+                      <td>
+                        8
+                      </td>
+                      <td>
+                        145
+                      </td>
+                    </tr>,
+                    "key": "0",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <td>
+                          Squat
+                        </td>,
+                        <td>
+                          8
+                        </td>,
+                        <td>
+                          145
+                        </td>,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": <td>
+                          Squat
+                        </td>,
+                        "key": "0",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Squat",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          "Squat",
+                        ],
+                        "type": "td",
+                      },
+                      Object {
+                        "instance": <td>
+                          8
+                        </td>,
+                        "key": "1",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 8,
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          8,
+                        ],
+                        "type": "td",
+                      },
+                      Object {
+                        "instance": <td>
+                          145
+                        </td>,
+                        "key": "2",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 145,
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          145,
+                        ],
+                        "type": "td",
+                      },
+                    ],
+                    "type": "tr",
+                  },
+                  Object {
+                    "instance": <tr>
+                      <td>
+                        Lunge
+                      </td>
+                      <td>
+                        8
+                      </td>
+                      <td>
+                        80
+                      </td>
+                    </tr>,
+                    "key": "1",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <td>
+                          Lunge
+                        </td>,
+                        <td>
+                          8
+                        </td>,
+                        <td>
+                          80
+                        </td>,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": <td>
+                          Lunge
+                        </td>,
+                        "key": "0",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Lunge",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          "Lunge",
+                        ],
+                        "type": "td",
+                      },
+                      Object {
+                        "instance": <td>
+                          8
+                        </td>,
+                        "key": "1",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 8,
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          8,
+                        ],
+                        "type": "td",
+                      },
+                      Object {
+                        "instance": <td>
+                          80
+                        </td>,
+                        "key": "2",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 80,
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          80,
+                        ],
+                        "type": "td",
+                      },
+                    ],
+                    "type": "tr",
+                  },
+                ],
+                "type": "tbody",
+              },
+            ],
+            "type": "table",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": <div
+            class="workout__actions"
+          >
+            <button
+              class="btn btn-secondary bevel"
+            >
+              ✍️ Edit
+            </button>
+            <button
+              class="btn btn-danger bevel"
+            >
+              💣 Delete
+            </button>
+          </div>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <button
+                className="btn btn-secondary bevel"
+              >
+                ✍️ Edit
+              </button>,
+              <button
+                className="btn btn-danger bevel"
+              >
+                💣 Delete
+              </button>,
+            ],
+            "className": "workout__actions",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": <button
+                class="btn btn-secondary bevel"
+              >
+                ✍️ Edit
+              </button>,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "✍️ Edit",
+                "className": "btn btn-secondary bevel",
+              },
+              "ref": null,
+              "rendered": Array [
+                "✍️ Edit",
+              ],
+              "type": "button",
+            },
+            Object {
+              "instance": <button
+                class="btn btn-danger bevel"
+              >
+                💣 Delete
+              </button>,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "💣 Delete",
+                "className": "btn btn-danger bevel",
+              },
+              "ref": null,
+              "rendered": Array [
+                "💣 Delete",
+              ],
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "workout": Object {
+          "date": 2018-04-15T20:00:00.000Z,
+          "exercises": Array [
+            Object {
+              "name": "Squat",
+              "reps": 8,
+              "set": 1,
+              "weight": 145,
+            },
+            Object {
+              "name": "Lunge",
+              "reps": 8,
+              "set": 1,
+              "weight": 80,
+            },
+          ],
+          "id": "workout0001",
+          "muscles": Array [
+            "Glutes",
+            "Quads",
+          ],
+          "name": "Legs",
+        },
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": <div
+          class="container workout__container"
+        >
+          <h5>
+            Legs
+             - 
+            April 15, 2018, 1:00 PM
+          </h5>
+          <table
+            class="table table-striped table-bordered"
+          >
+            <caption
+              hidden=""
+            >
+              Legs
+            </caption>
+            <thead
+              class="thead-light"
+            >
+              <tr>
+                <th>
+                  Exercise
+                </th>
+                <th>
+                  Reps
+                </th>
+                <th>
+                  Weight
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Squat
+                </td>
+                <td>
+                  8
+                </td>
+                <td>
+                  145
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Lunge
+                </td>
+                <td>
+                  8
+                </td>
+                <td>
+                  80
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div
+            class="workout__actions"
+          >
+            <button
+              class="btn btn-secondary bevel"
+            >
+              ✍️ Edit
+            </button>
+            <button
+              class="btn btn-danger bevel"
+            >
+              💣 Delete
+            </button>
+          </div>
+        </div>,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h5>
+              Legs
+               - 
+              April 15, 2018, 1:00 PM
+            </h5>,
+            <Table
+              headingData={
+                Array [
+                  "Exercise",
+                  "Reps",
+                  "Weight",
+                ]
+              }
+              rowData={
+                Array [
+                  Object {
+                    "name": "Squat",
+                    "reps": 8,
+                    "set": 1,
+                    "weight": 145,
+                  },
+                  Object {
+                    "name": "Lunge",
+                    "reps": 8,
+                    "set": 1,
+                    "weight": 80,
+                  },
+                ]
+              }
+              rowKeys={
+                Array [
+                  "name",
+                  "reps",
+                  "weight",
+                ]
+              }
+              title="Legs"
+            />,
+            <div
+              className="workout__actions"
+            >
+              <button
+                className="btn btn-secondary bevel"
+              >
+                ✍️ Edit
+              </button>
+              <button
+                className="btn btn-danger bevel"
+              >
+                💣 Delete
+              </button>
+            </div>,
+          ],
+          "className": "container workout__container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": <h5>
+              Legs
+               - 
+              April 15, 2018, 1:00 PM
+            </h5>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Legs",
+                " - ",
+                "April 15, 2018, 1:00 PM",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Legs",
+              " - ",
+              "April 15, 2018, 1:00 PM",
+            ],
+            "type": "h5",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "headingData": Array [
+                "Exercise",
+                "Reps",
+                "Weight",
+              ],
+              "rowData": Array [
+                Object {
+                  "name": "Squat",
+                  "reps": 8,
+                  "set": 1,
+                  "weight": 145,
+                },
+                Object {
+                  "name": "Lunge",
+                  "reps": 8,
+                  "set": 1,
+                  "weight": 80,
+                },
+              ],
+              "rowKeys": Array [
+                "name",
+                "reps",
+                "weight",
+              ],
+              "title": "Legs",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": <table
+                class="table table-striped table-bordered"
+              >
+                <caption
+                  hidden=""
+                >
+                  Legs
+                </caption>
+                <thead
+                  class="thead-light"
+                >
+                  <tr>
+                    <th>
+                      Exercise
+                    </th>
+                    <th>
+                      Reps
+                    </th>
+                    <th>
+                      Weight
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      Squat
+                    </td>
+                    <td>
+                      8
+                    </td>
+                    <td>
+                      145
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Lunge
+                    </td>
+                    <td>
+                      8
+                    </td>
+                    <td>
+                      80
+                    </td>
+                  </tr>
+                </tbody>
+              </table>,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <caption
+                    hidden="true"
+                  >
+                    Legs
+                  </caption>,
+                  <thead
+                    className="thead-light"
+                  >
+                    <tr>
+                      <th>
+                        Exercise
+                      </th>
+                      <th>
+                        Reps
+                      </th>
+                      <th>
+                        Weight
+                      </th>
+                    </tr>
+                  </thead>,
+                  <tbody>
+                    <tr>
+                      <td>
+                        Squat
+                      </td>
+                      <td>
+                        8
+                      </td>
+                      <td>
+                        145
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Lunge
+                      </td>
+                      <td>
+                        8
+                      </td>
+                      <td>
+                        80
+                      </td>
+                    </tr>
+                  </tbody>,
+                ],
+                "className": "table table-striped table-bordered",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": <caption
+                    hidden=""
+                  >
+                    Legs
+                  </caption>,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Legs",
+                    "hidden": "true",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Legs",
+                  ],
+                  "type": "caption",
+                },
+                Object {
+                  "instance": <thead
+                    class="thead-light"
+                  >
+                    <tr>
+                      <th>
+                        Exercise
+                      </th>
+                      <th>
+                        Reps
+                      </th>
+                      <th>
+                        Weight
+                      </th>
+                    </tr>
+                  </thead>,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <tr>
+                      <th>
+                        Exercise
+                      </th>
+                      <th>
+                        Reps
+                      </th>
+                      <th>
+                        Weight
+                      </th>
+                    </tr>,
+                    "className": "thead-light",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": <tr>
+                        <th>
+                          Exercise
+                        </th>
+                        <th>
+                          Reps
+                        </th>
+                        <th>
+                          Weight
+                        </th>
+                      </tr>,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <th>
+                            Exercise
+                          </th>,
+                          <th>
+                            Reps
+                          </th>,
+                          <th>
+                            Weight
+                          </th>,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": <th>
+                            Exercise
+                          </th>,
+                          "key": "0",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Exercise",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            "Exercise",
+                          ],
+                          "type": "th",
+                        },
+                        Object {
+                          "instance": <th>
+                            Reps
+                          </th>,
+                          "key": "1",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Reps",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            "Reps",
+                          ],
+                          "type": "th",
+                        },
+                        Object {
+                          "instance": <th>
+                            Weight
+                          </th>,
+                          "key": "2",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Weight",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            "Weight",
+                          ],
+                          "type": "th",
+                        },
+                      ],
+                      "type": "tr",
+                    },
+                  ],
+                  "type": "thead",
+                },
+                Object {
+                  "instance": <tbody>
+                    <tr>
+                      <td>
+                        Squat
+                      </td>
+                      <td>
+                        8
+                      </td>
+                      <td>
+                        145
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Lunge
+                      </td>
+                      <td>
+                        8
+                      </td>
+                      <td>
+                        80
+                      </td>
+                    </tr>
+                  </tbody>,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <tr>
+                        <td>
+                          Squat
+                        </td>
+                        <td>
+                          8
+                        </td>
+                        <td>
+                          145
+                        </td>
+                      </tr>,
+                      <tr>
+                        <td>
+                          Lunge
+                        </td>
+                        <td>
+                          8
+                        </td>
+                        <td>
+                          80
+                        </td>
+                      </tr>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": <tr>
+                        <td>
+                          Squat
+                        </td>
+                        <td>
+                          8
+                        </td>
+                        <td>
+                          145
+                        </td>
+                      </tr>,
+                      "key": "0",
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <td>
+                            Squat
+                          </td>,
+                          <td>
+                            8
+                          </td>,
+                          <td>
+                            145
+                          </td>,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": <td>
+                            Squat
+                          </td>,
+                          "key": "0",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Squat",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            "Squat",
+                          ],
+                          "type": "td",
+                        },
+                        Object {
+                          "instance": <td>
+                            8
+                          </td>,
+                          "key": "1",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": 8,
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            8,
+                          ],
+                          "type": "td",
+                        },
+                        Object {
+                          "instance": <td>
+                            145
+                          </td>,
+                          "key": "2",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": 145,
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            145,
+                          ],
+                          "type": "td",
+                        },
+                      ],
+                      "type": "tr",
+                    },
+                    Object {
+                      "instance": <tr>
+                        <td>
+                          Lunge
+                        </td>
+                        <td>
+                          8
+                        </td>
+                        <td>
+                          80
+                        </td>
+                      </tr>,
+                      "key": "1",
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <td>
+                            Lunge
+                          </td>,
+                          <td>
+                            8
+                          </td>,
+                          <td>
+                            80
+                          </td>,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": <td>
+                            Lunge
+                          </td>,
+                          "key": "0",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Lunge",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            "Lunge",
+                          ],
+                          "type": "td",
+                        },
+                        Object {
+                          "instance": <td>
+                            8
+                          </td>,
+                          "key": "1",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": 8,
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            8,
+                          ],
+                          "type": "td",
+                        },
+                        Object {
+                          "instance": <td>
+                            80
+                          </td>,
+                          "key": "2",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": 80,
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            80,
+                          ],
+                          "type": "td",
+                        },
+                      ],
+                      "type": "tr",
+                    },
+                  ],
+                  "type": "tbody",
+                },
+              ],
+              "type": "table",
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": <div
+              class="workout__actions"
+            >
+              <button
+                class="btn btn-secondary bevel"
+              >
+                ✍️ Edit
+              </button>
+              <button
+                class="btn btn-danger bevel"
+              >
+                💣 Delete
+              </button>
+            </div>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <button
+                  className="btn btn-secondary bevel"
+                >
+                  ✍️ Edit
+                </button>,
+                <button
+                  className="btn btn-danger bevel"
+                >
+                  💣 Delete
+                </button>,
+              ],
+              "className": "workout__actions",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": <button
+                  class="btn btn-secondary bevel"
+                >
+                  ✍️ Edit
+                </button>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "✍️ Edit",
+                  "className": "btn btn-secondary bevel",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "✍️ Edit",
+                ],
+                "type": "button",
+              },
+              Object {
+                "instance": <button
+                  class="btn btn-danger bevel"
+                >
+                  💣 Delete
+                </button>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "💣 Delete",
+                  "className": "btn btn-danger bevel",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "💣 Delete",
+                ],
+                "type": "button",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

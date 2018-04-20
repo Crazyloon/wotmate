@@ -32,10 +32,4 @@ class App extends React.Component {
 App.propTypes = {
 };
 
-function mapStateToProps(state, ownprops){
-  return{
-    workouts: state.workouts
-  };
-}
-
-export default withRouter(connect(mapStateToProps)(App));
+export default App;
