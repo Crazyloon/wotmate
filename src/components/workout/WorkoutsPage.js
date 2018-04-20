@@ -2,20 +2,24 @@ import React from 'react';
 import Workout from './Workout';
 import PropTypes from 'prop-types';
 import { withRouter, Route, Switch } from 'react-router';
+import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 
 class WorkoutsPage extends React.Component {
   constructor(props) {
     super(props);
   }
+
+
+
   render() {
     return (
       <div>
         <div className="col-xs-12 page-workouts__header">
-          <button className="btn btn-primary header__button--add bevel">➕ New Workout</button>
+          <Link to="/workout" ><button className="btn btn-primary header__button--add bevel">➕ New Workout</button></Link>
         </div>
         <div className="col-xs-12 workouts__container">
-          {this.props.workouts.map(wo => <Workout key={wo.id + wo.name} workout={wo}/>)} 
+          {this.props.workouts.map(wo => <Workout key={wo.id + wo.type} workout={wo}/>)} 
         </div>
       </div>
     );

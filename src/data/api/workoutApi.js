@@ -2,7 +2,7 @@ const workouts = [
   {
     id: 'workout001',
     date: new Date('2018/04/15 2:00'),
-    name: 'Chest',
+    type: 'Chest',
     muscles: [
       'Pectoralis Major',
       'Pectoralis Minor',
@@ -50,7 +50,7 @@ const workouts = [
   {
     id: 'workout002',
     date: new Date('2018/04/16 1:00'),
-    name: 'Back',
+    type: 'Back',
     muscles: [
       'Latissimus dorsi',
       'Trapezius',

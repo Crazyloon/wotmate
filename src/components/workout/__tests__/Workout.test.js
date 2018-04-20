@@ -13,7 +13,7 @@ describe('Workout', () =>{
   const testWorkout = {
     id: 'workout0001',
     date: new Date('2018/04/15 13:00'),
-    name: 'Legs',
+    type: 'Legs',
     muscles: [
       'Glutes',
       'Quads'

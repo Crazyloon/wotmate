@@ -7,8 +7,8 @@ import Table from '../shared/Table';
 const Workout = ({workout}) => {
   return(
     <div className="container workout__container">
-      <h5>{workout.name} - {formatTime(workout.date)}</h5>
-      <Table title={workout.name} headingData={["Exercise", "Reps", "Weight"]} rowData={workout.exercises} rowKeys={["name", "reps", "weight"]} />    
+      <h5>{workout.type} - {formatTime(workout.date)}</h5>
+      <Table title={workout.type} headingData={["Exercise", "Reps", "Weight"]} rowData={workout.exercises} rowKeys={["name", "reps", "weight"]} />    
       <div className="workout__actions">
           <button className="btn btn-secondary bevel">✍️ Edit</button>
           <button className="btn btn-danger bevel">💣 Delete</button>
@@ -25,7 +25,7 @@ Workout.defaultProps = {
   workout: {
     id: '',
     date: '',
-    name: '',
+    type: '',
     muscles: [],
     exercises: []
   }
