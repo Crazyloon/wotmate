@@ -26,7 +26,7 @@ ReactWrapper {
           "Glutes",
           "Quads",
         ],
-        "type": "Legs",
+        "name": "Legs",
       }
     }
   />,
@@ -64,7 +64,7 @@ ReactWrapper {
           "Glutes",
           "Quads",
         ],
-        "type": "Legs",
+        "name": "Legs",
       },
     },
     "ref": null,
@@ -812,7 +812,7 @@ ReactWrapper {
             "Glutes",
             "Quads",
           ],
-          "type": "Legs",
+          "name": "Legs",
         },
       },
       "ref": null,

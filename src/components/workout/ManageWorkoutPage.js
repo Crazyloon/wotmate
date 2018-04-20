@@ -9,7 +9,7 @@ class ManageWorkoutPage extends React.Component {
       workout: {
         id: 'workout001',
         date: '',
-        type: '',
+        name: '',
         muscles: [],
         exercises: []
       },
@@ -24,8 +24,8 @@ class ManageWorkoutPage extends React.Component {
   isFormValid(fieldCheck){
     let isValid = true;
     let errors = {};
-    if(this.state.workout.type.length < 3){
-      errors.type = 'Give the workout a longer type (3 character minimum).';
+    if(this.state.workout.name.length < 3){
+      errors.name = 'Give the workout a longer name (3 character minimum).';
       isValid = false;
     }
     // TODO ADD MORE VALIDATION.
@@ -69,7 +69,7 @@ function mapStateToProps(state, ownProps){
   let workout = {
     id: 'workout001',
     date: new Date('2018/04/15 2:00'),
-    type: 'Chest',
+    name: 'Chest',
     muscles: [
       'Pectoralis Major',
       'Pectoralis Minor',
