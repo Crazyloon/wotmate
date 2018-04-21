@@ -1,47 +1,55 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Table = ({title, headingData, rowData, rowKeys}) => {
-  return (
-    <table className="table table-striped table-bordered">
-        <caption hidden="true">{title}</caption>
-        <thead className="thead-light">
-          <tr>
-            {
-              headingData.map((heading, index) => {
-                return(
-                  <th key={index}>{heading}</th>
-                );
-              })
-            }
-          </tr>
-        </thead>
-        <tbody>
-          {
-            rowData.map((data, index) => {
-              return(
-                <tr key={index}>
-                  {
-                    rowKeys.map((key, i) => {
-                      return(
-                        <td key={i}>{data[key]}</td>
-                      );
-                    })
-                  }
+const Table = ({title, exercises}) => {
+  return(
+    <div>
+      {
+        exercises.map((exercise, index) =>{
+          return(
+            <table className="table table-striped table-bordered" key={index}>
+              <caption hidden="true">{title}</caption>
+              <thead className="thead-light">
+                <tr>
+                  <th>{exercise.type.labels[0]}</th>
+                  <th>{exercise.type.labels[1]}</th>
+                  <th>{exercise.type.labels[2]}</th>
                 </tr>
-              );
-            })
-          }
-        </tbody>
-      </table>
-  );
+              </thead>
+              <tbody>
+                {
+                  exercises[index].sets.map((set, idx) => {
+                    return(
+                      <tr key={idx}>
+                        {
+                          Object.keys(set).map((key, i) =>{
+                            return(
+                              <td key={i}>{set[key]}</td>
+                            );
+                          })
+                        }
+                      </tr>
+                    );
+                  })
+                }
+              </tbody>
+            </table>
+          );
+        })
+      }
+    </div>
+    );
 };
 
 Table.propTypes = {
   title: PropTypes.string,
-  headingData: PropTypes.arrayOf(PropTypes.string),
-  rowData: PropTypes.arrayOf(PropTypes.object),
-  rowKeys: PropTypes.arrayOf(PropTypes.string)
+  exercises: PropTypes.arrayOf(PropTypes.shape({
+    type: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        labels: PropTypes.objectOf(PropTypes.string)
+      }),
+    sets: PropTypes.array
+  }))
 };
  
 export default Table;

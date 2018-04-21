@@ -7,36 +7,71 @@ Enzyme.configure({
 });
 
 import Workout from '../Workout';
+import { workoutTypes, workoutIntensity } from '../../../data/api/workoutApi';
 
-describe('Workout', () =>{
+describe('Workout Test', () =>{
   // arrange
   const testWorkout = {
     id: 'workout0001',
     date: new Date('2018/04/15 13:00'),
     name: 'Legs',
-    muscles: [
-      'Glutes',
-      'Quads'
-    ],
+    muscles: [],
     exercises: [
       {
-        set: 1,
-        name: 'Squat',
-        reps: 8,
-        weight: 145
+        type: workoutTypes.cardio,
+        sets: [
+          {
+            name: 'Sprint',
+            duration: 30,
+            distance: 100
+          },
+          {
+            name: 'Sprint',
+            duration: 30,
+            distance: 100
+          },
+          {
+            name: 'Sprint',
+            duration: 30,
+            distance: 100
+          },
+          {
+            name: 'Sprint',
+            duration: 30,
+            distance: 100
+          }
+        ]
       },
       {
-        set: 1,
-        name: 'Lunge',
-        reps: 8,
-        weight: 80
+        type: workoutTypes.lift,
+        sets: [
+          {
+            name: 'Lunges',
+            reps: 6,
+            weight: 100
+          },
+          {
+            name: 'Lunges',
+            reps: 6,
+            weight: 100
+          }
+        ]
+      },
+      {
+        type: workoutTypes.activity,
+        sets: [
+          {
+            name: 'Yoga',
+            duration: 30,
+            intensity: workoutIntensity.heavy
+          }
+        ]
       }
     ]
   };
 
   // act
   const wrapper = mount(<Workout workout={testWorkout}/>);
-  
   // assert
   it('renders a formatted workout title', ()=>{
     expect(wrapper.find('h5').text()).toEqual('Legs - April 15, 2018, 1:00 PM');

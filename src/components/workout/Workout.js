@@ -9,9 +9,7 @@ const Workout = ({workout}) => {
     <div className="container workout__container">
       <h5>{workout.name} - {formatTime(workout.date)}</h5>
       <Table title={workout.name}
-             headingData={["Exercise", "Reps", "Weight"]} 
-             rowData={workout.exercises} 
-             rowKeys={["name", "reps", "weight"]}
+             exercises={workout.exercises}
       />    
       <div className="workout__actions">
           <button className="btn btn-secondary bevel">✍️ Edit</button>

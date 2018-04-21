@@ -7,19 +7,49 @@ Enzyme.configure({
 });
 
 import Table from '../Table';
+import { workoutTypes, workoutIntensity } from '../../../data/api/workoutApi';
 
-describe('Table', () =>{
+describe('Table Test', () =>{
   // arange
   const testProps = {
-    title: 'Table Title',
-    headingData: ['h1', 'h2', 'h3'],
-    rowData: [{a: 'one', b: 'two', c: 'three'}, 
-              {a: 'four', b: 'five', c: 'six'}, 
-              {a: 'seven', b: 'eight', c: 'nine'}],
-    rowKeys: ['a', 'b', 'c']
+    id: 'workout0001',
+    date: new Date('2018/04/15 14:00'),
+    name: 'Table Title',
+    exercises: [
+      {
+        type: workoutTypes.cardio,
+        sets: [
+          {
+            name: 'Sprint',
+            duration: 30,
+            distance: 100
+          }
+        ]
+      },
+      {
+        type: workoutTypes.lift,
+        sets: [
+          {
+            name: 'Lunges',
+            reps: 6,
+            weight: 100
+          }
+        ]
+      },
+      {
+        type: workoutTypes.activity,
+        sets: [
+          {
+            name: 'Yoga',
+            duration: 30,
+            intensity: workoutIntensity.heavy
+          }
+        ]
+      }
+    ]
   };
 
-  it('renders with headingData and rowData under each heading', () => {
+  it('renders with headings for each type of exercise and exercises under each heading', () => {
     // act
     const wrapper = mount(<Table {...testProps} />); 
 
@@ -27,7 +57,7 @@ describe('Table', () =>{
     const definitions = wrapper.find('td');
     
     // assert
-    expect(headings).toHaveLength(3); // 3 headings
+    expect(headings).toHaveLength(9); // 9 headings
     expect(definitions).toHaveLength(9); // 9 definitions
     expect(wrapper).toMatchSnapshot();
   });

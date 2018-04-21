@@ -28,6 +28,9 @@ caption{
 
 .workouts__container{
   margin: 20px 0;
+  @media screen and (max-width: map-get($grid-breakpoints, sm)){
+    margin: 20px 5px;
+  }
 }
 
 .workout__container{
@@ -64,3 +67,72 @@ caption{
 .bevel{
   box-shadow: $btn-bevel-down;
 }
+
+.hero{
+  background-image: url(/assets/images/squat_hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 5px solid $gray-800;
+}
+
+.hero__transparent{
+  padding: 20px;
+  width: 100%;
+  color: #dedede;
+  background-color: rgba(0,0,0, 0.3);
+  text-align: center;
+  :nth-child(3){
+    position: relative;
+    right: -10px;
+  }
+}
+
+.features--list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  
+}
+
+.features--box{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  padding: 10px;
+  p{
+    text-align: center;
+  }
+}
+
+.features-box--p__emphasis{
+  margin-top: 16px;
+}
+
+.color-red{
+  color: #ff2e38;
+}
+
+.color-x{
+  color: #7c379e;
+}
+
+.color-y{
+  color: #3cce2e;
+}
+
+// svg.color-y *{
+//   fill: url(#rg);
+// }
+
+// Radial Gradient #rg (located on index.html)
+//  $grad: #ff3c00;
+//  $grad: #ffd000;
+//  $grad: #a6ff00;
+//  $grad: #48ff00;
+//  $grad: #2bff00;

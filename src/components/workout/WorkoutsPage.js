@@ -13,6 +13,7 @@ class WorkoutsPage extends React.Component {
 
 
   render() {
+    console.log("Loading Page: ", this.props.workouts);
     return (
       <div>
         <div className="col-xs-12 page-workouts__header">
