@@ -350,12 +350,12 @@ ReactWrapper {
           class="workout__actions"
         >
           <button
-            class="btn btn-secondary bevel"
+            class="btn btn-secondary bevel bevel-md"
           >
             ✍️ Edit
           </button>
           <button
-            class="btn btn-danger bevel"
+            class="btn btn-danger bevel bevel-md"
           >
             💣 Delete
           </button>
@@ -452,12 +452,12 @@ ReactWrapper {
             className="workout__actions"
           >
             <button
-              className="btn btn-secondary bevel"
+              className="btn btn-secondary bevel bevel-md"
             >
               ✍️ Edit
             </button>
             <button
-              className="btn btn-danger bevel"
+              className="btn btn-danger bevel bevel-md"
             >
               💣 Delete
             </button>
@@ -2370,12 +2370,12 @@ ReactWrapper {
             class="workout__actions"
           >
             <button
-              class="btn btn-secondary bevel"
+              class="btn btn-secondary bevel bevel-md"
             >
               ✍️ Edit
             </button>
             <button
-              class="btn btn-danger bevel"
+              class="btn btn-danger bevel bevel-md"
             >
               💣 Delete
             </button>
@@ -2385,12 +2385,12 @@ ReactWrapper {
           "props": Object {
             "children": Array [
               <button
-                className="btn btn-secondary bevel"
+                className="btn btn-secondary bevel bevel-md"
               >
                 ✍️ Edit
               </button>,
               <button
-                className="btn btn-danger bevel"
+                className="btn btn-danger bevel bevel-md"
               >
                 💣 Delete
               </button>,
@@ -2401,7 +2401,7 @@ ReactWrapper {
           "rendered": Array [
             Object {
               "instance": <button
-                class="btn btn-secondary bevel"
+                class="btn btn-secondary bevel bevel-md"
               >
                 ✍️ Edit
               </button>,
@@ -2409,7 +2409,7 @@ ReactWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "✍️ Edit",
-                "className": "btn btn-secondary bevel",
+                "className": "btn btn-secondary bevel bevel-md",
               },
               "ref": null,
               "rendered": Array [
@@ -2419,7 +2419,7 @@ ReactWrapper {
             },
             Object {
               "instance": <button
-                class="btn btn-danger bevel"
+                class="btn btn-danger bevel bevel-md"
               >
                 💣 Delete
               </button>,
@@ -2427,7 +2427,7 @@ ReactWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "💣 Delete",
-                "className": "btn btn-danger bevel",
+                "className": "btn btn-danger bevel bevel-md",
               },
               "ref": null,
               "rendered": Array [
@@ -2700,12 +2700,12 @@ ReactWrapper {
             class="workout__actions"
           >
             <button
-              class="btn btn-secondary bevel"
+              class="btn btn-secondary bevel bevel-md"
             >
               ✍️ Edit
             </button>
             <button
-              class="btn btn-danger bevel"
+              class="btn btn-danger bevel bevel-md"
             >
               💣 Delete
             </button>
@@ -2802,12 +2802,12 @@ ReactWrapper {
               className="workout__actions"
             >
               <button
-                className="btn btn-secondary bevel"
+                className="btn btn-secondary bevel bevel-md"
               >
                 ✍️ Edit
               </button>
               <button
-                className="btn btn-danger bevel"
+                className="btn btn-danger bevel bevel-md"
               >
                 💣 Delete
               </button>
@@ -4720,12 +4720,12 @@ ReactWrapper {
               class="workout__actions"
             >
               <button
-                class="btn btn-secondary bevel"
+                class="btn btn-secondary bevel bevel-md"
               >
                 ✍️ Edit
               </button>
               <button
-                class="btn btn-danger bevel"
+                class="btn btn-danger bevel bevel-md"
               >
                 💣 Delete
               </button>
@@ -4735,12 +4735,12 @@ ReactWrapper {
             "props": Object {
               "children": Array [
                 <button
-                  className="btn btn-secondary bevel"
+                  className="btn btn-secondary bevel bevel-md"
                 >
                   ✍️ Edit
                 </button>,
                 <button
-                  className="btn btn-danger bevel"
+                  className="btn btn-danger bevel bevel-md"
                 >
                   💣 Delete
                 </button>,
@@ -4751,7 +4751,7 @@ ReactWrapper {
             "rendered": Array [
               Object {
                 "instance": <button
-                  class="btn btn-secondary bevel"
+                  class="btn btn-secondary bevel bevel-md"
                 >
                   ✍️ Edit
                 </button>,
@@ -4759,7 +4759,7 @@ ReactWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "✍️ Edit",
-                  "className": "btn btn-secondary bevel",
+                  "className": "btn btn-secondary bevel bevel-md",
                 },
                 "ref": null,
                 "rendered": Array [
@@ -4769,7 +4769,7 @@ ReactWrapper {
               },
               Object {
                 "instance": <button
-                  class="btn btn-danger bevel"
+                  class="btn btn-danger bevel bevel-md"
                 >
                   💣 Delete
                 </button>,
@@ -4777,7 +4777,7 @@ ReactWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "💣 Delete",
-                  "className": "btn btn-danger bevel",
+                  "className": "btn btn-danger bevel bevel-md",
                 },
                 "ref": null,
                 "rendered": Array [

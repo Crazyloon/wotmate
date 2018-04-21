@@ -30,7 +30,7 @@ const WorkoutForm = ({workout, onSave, onChange, saving, errors}) => {
           />
 
         <button
-          className="btn btn-primary bevel"
+          className="btn btn-primary bevel  bevel-md"
           type="submit"
           disabled={saving}
           value={saving ? 'Saving...' : 'Save'}

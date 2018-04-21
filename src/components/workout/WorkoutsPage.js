@@ -17,7 +17,7 @@ class WorkoutsPage extends React.Component {
     return (
       <div>
         <div className="col-xs-12 page-workouts__header">
-          <Link to="/workout" ><button className="btn btn-primary header__button--add bevel">➕ New Workout</button></Link>
+          <Link to="/workout" ><button className="btn btn-primary header__button--add bevel bevel-md">➕ New Workout</button></Link>
         </div>
         <div className="col-xs-12 workouts__container">
           {this.props.workouts.map(wo => <Workout key={wo.id + wo.name} workout={wo}/>)} 

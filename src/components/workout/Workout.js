@@ -12,8 +12,8 @@ const Workout = ({workout}) => {
              exercises={workout.exercises}
       />    
       <div className="workout__actions">
-          <button className="btn btn-secondary bevel">✍️ Edit</button>
-          <button className="btn btn-danger bevel">💣 Delete</button>
+          <button className="btn btn-secondary bevel bevel-md">✍️ Edit</button>
+          <button className="btn btn-danger bevel bevel-md">💣 Delete</button>
       </div>
     </div>
   );
