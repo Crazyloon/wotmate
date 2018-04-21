@@ -53,10 +53,10 @@ caption{
   justify-content: space-around;  
 }
 
-[class*="btn-"].bevel-md:focus{
+.bevel-md:focus{
   box-shadow: $btn-bevel-down;
 }
-[class*="btn-"].bevel-md:active:focus{
+.bevel-md:active:focus{
   padding-top: 7px;
   padding-left: 13px;
   padding-right: 11px;
