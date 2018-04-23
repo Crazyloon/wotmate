@@ -200,6 +200,7 @@ class ManageWorkoutPage extends React.Component {
         />
   
         <Table
+          containerClass={"col-md-8 offset-md-2 marginTop__20"}
           exercises={this.state.workout.exercises}
           title="New Workout"/>
       </React.Fragment>

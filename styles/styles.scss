@@ -154,8 +154,17 @@ caption{
   display: flex;
 }
 
-.form-group__fullWidth{
+.fullWidth{
   width: 100%;
+}
+
+.marginTop__20{
+  margin-top: 20px;
+}
+
+.button--save__rightAlign{
+  display: flex;
+  justify-content: flex-end;
 }
 
 

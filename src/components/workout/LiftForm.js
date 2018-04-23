@@ -74,7 +74,7 @@ class LiftForm extends React.Component {
               </button>
       
               <TextInput
-                wrapperClass={"form-group form-group__fullWidth"}
+                wrapperClass={"form-group fullWidth"}
                 name="customWorkout"
                 label="Custom Lift Type"
                 placeholder="Lunges"
@@ -115,14 +115,16 @@ class LiftForm extends React.Component {
             />
         </div>
 
-        <button
-          className="btn btn-primary bevel bevel-md"
-          type="button"
-          disabled={this.props.saving}
-          value={this.props.saving ? 'Adding...' : 'Add Set'}
-          onClick={this.props.onAddSet}>
-            <i className="fas fa-angle-double-down"/> Add Set
-        </button>
+        <div className="button--save__rightAlign">
+          <button
+            className="btn btn-primary bevel bevel-md"
+            type="button"
+            disabled={this.props.saving}
+            value={this.props.saving ? 'Adding...' : 'Add Set'}
+            onClick={this.props.onAddSet}>
+              <i className="fas fa-angle-double-down"/> Add Set
+          </button>
+        </div>
 
       </div>
     );

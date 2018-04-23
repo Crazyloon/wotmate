@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Table = ({title, exercises}) => {
+const Table = ({title, exercises, containerClass}) => {
   return(
-    <div>
+    <div className={containerClass}>
       {
         exercises.map((exercise, index) =>{
           return(
@@ -42,6 +42,7 @@ const Table = ({title, exercises}) => {
 };
 
 Table.propTypes = {
+  containerClass: PropTypes.string,
   title: PropTypes.string,
   exercises: PropTypes.arrayOf(PropTypes.shape({
     type: PropTypes.shape({

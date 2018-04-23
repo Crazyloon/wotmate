@@ -33,11 +33,7 @@ class CardioForm extends React.Component {
       this.setState({liftOptions: liftOpts, customCardio: {text: '', value: ''}});
     }
   }
-
-  isValid(){
-    return this.exercise.name !== '';
-  }
-
+  // TODO: Remove this and pull the data from an API
   ddOpts(){
     return [{value: "Sprint", text: "Sprint"},
             {value: "Run", text: "Run"},
@@ -72,7 +68,7 @@ class CardioForm extends React.Component {
               </button>
       
               <TextInput
-                wrapperClass={"form-group form-group__fullWidth"}
+                wrapperClass={"form-group fullWidth"}
                 name="customCardio"
                 label="Custom Cardio Type"
                 placeholder="Circut"
@@ -113,14 +109,16 @@ class CardioForm extends React.Component {
             />
         </div>
 
-        <button
-          className="btn btn-primary bevel bevel-md"
-          type="button"
-          disabled={this.props.saving}
-          value={this.props.saving ? 'Adding...' : 'Add Set'}
-          onClick={this.props.onAddSet}>
-            <i className="fas fa-angle-double-down"/> Add Set
-        </button>
+        <div className="button--save__rightAlign">
+          <button
+            className="btn btn-primary bevel bevel-md"
+            type="button"
+            disabled={this.props.saving}
+            value={this.props.saving ? 'Adding...' : 'Add Set'}
+            onClick={this.props.onAddSet}>
+              <i className="fas fa-angle-double-down"/> Add Set
+          </button>
+        </div>
 
       </div>
     );
@@ -128,7 +126,11 @@ class CardioForm extends React.Component {
 }
 
 CardioForm.propTypes = {
-  exercise: PropTypes.object.isRequired
+  exercise: PropTypes.object.isRequired,
+  onAddSet: PropTypes.func.isRequired,
+  onCardioChange: PropTypes.func.isRequired,
+  newSet: PropTypes.object.isRequired,
+  saving: PropTypes.bool
 };
 
 export default CardioForm;
