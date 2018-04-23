@@ -4,7 +4,7 @@ import WorkoutForm from './WorkoutForm';
 import Table from '../shared/Table';
 import { workoutTypes, workoutIntensity } from '../../data/api/workoutApi';
 
-function _getNewExerciseSet(name, previousSet){
+function _getDefaultExerciseSet(name, previousSet){
   switch(name){
     case 'lift': 
       return {
@@ -42,26 +42,7 @@ class ManageWorkoutPage extends React.Component {
         date: '',
         name: '',
         muscles: [],
-        exercises: [{
-          type: workoutTypes.lift,
-          sets: [            
-            {
-              name: 'Bench Press',
-              reps: 8,
-              weight: 130
-            },
-            {
-              name: 'Incline Bench Press',
-              reps: 8,
-              weight: 100
-            },
-            {
-              name: 'Decline Bench Press',
-              reps: 8,
-              weight: 80
-            }
-          ]
-        }]
+        exercises: []
       },
       exercise: {
         tag: '',
@@ -76,6 +57,7 @@ class ManageWorkoutPage extends React.Component {
       customWorkout: ''
     };
 
+    this.onNameChange = this.onNameChange.bind(this);
     this.onExerciseChange = this.onExerciseChange.bind(this);
     this.onLiftChange = this.onLiftChange.bind(this);
     this.onCardioChange = this.onCardioChange.bind(this);
@@ -95,6 +77,15 @@ class ManageWorkoutPage extends React.Component {
     return isValid;
   }
 
+  onNameChange(e){
+    const {name: key, value } = e.target;
+    const workout = Object.assign({}, this.state.workout);
+    workout[key] = value;
+    this.setState({
+      workout: workout
+    });
+  }
+
   onExerciseChange(event){ // Exercise Type Drop Down
     const {name: key, value } = event.target;
     let exercise = Object.assign({}, this.state.exercise);
@@ -106,7 +97,7 @@ class ManageWorkoutPage extends React.Component {
     this.setState((previousState) => {
       return {
         exercise: exercise,
-        newSet: _getNewExerciseSet(value, previousState.newSet)
+        newSet: _getDefaultExerciseSet(value, previousState.newSet)
       };
     });
     return;
@@ -190,6 +181,7 @@ class ManageWorkoutPage extends React.Component {
           exercise={this.state.exercise}
           newSet={this.state.newSet}
           customWorkout={this.state.customWorkout} 
+          onNameChange={this.onNameChange} 
           onExerciseChange={this.onExerciseChange} 
           onLiftChange={this.onLiftChange} 
           onCardioChange={this.onCardioChange} 

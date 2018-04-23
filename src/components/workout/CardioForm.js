@@ -89,7 +89,7 @@ class CardioForm extends React.Component {
             onChange={this.props.onCardioChange}
             required
             min={1}
-            max={100}
+            max={600}
             step={1}
             error={this.state.errors.duration}
             />
@@ -103,7 +103,7 @@ class CardioForm extends React.Component {
             onChange={this.props.onCardioChange}
             required
             min={5}
-            max={1000}
+            max={10000}
             step={5}
             error={this.state.errors.distance}
             />

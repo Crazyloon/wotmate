@@ -6,7 +6,7 @@ import LiftForm from './LiftForm';
 import CardioForm from './CardioForm';
 import { workoutTypes } from '../../data/api/workoutApi';
 
-const WorkoutForm = ({ workout, exercise, newSet, customWorkout,
+const WorkoutForm = ({ workout, exercise, newSet, customWorkout, onNameChange,
                        onExerciseChange, onLiftChange, onAddSet, onCardioChange,
                        saving, errors }) => {
   let formClass = `needs-validation`;
@@ -46,6 +46,17 @@ const WorkoutForm = ({ workout, exercise, newSet, customWorkout,
     <div className="col-md-8 offset-md-2">
       <form className={formClass} noValidate>
         <h1>Manage Workout</h1>
+
+        <TextInput 
+          wrapperClass={"form-group"}
+          name="name"
+          label="Workout Name"
+          placeholder="Fat Buster"
+          value={workout.name}
+          onChange={onNameChange}
+          error={errors.name}
+          />
+
         <SelectInput
           name="type"
           label="Type"
@@ -64,8 +75,14 @@ const WorkoutForm = ({ workout, exercise, newSet, customWorkout,
  
 WorkoutForm.propTypes = {
   workout: PropTypes.object.isRequired,
+  exercise: PropTypes.object.isRequired,
+  newSet: PropTypes.object.isRequired,
   customWorkout: PropTypes.string,
+  onNameChange: PropTypes.func.isRequired,
   onExerciseChange: PropTypes.func.isRequired,
+  onLiftChange: PropTypes.func.isRequired,
+  onCardioChange: PropTypes.func.isRequired,
+  onAddSet: PropTypes.func.isRequired,
   saving: PropTypes.bool,
   errors: PropTypes.object
 };

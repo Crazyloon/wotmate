@@ -39,10 +39,6 @@ class LiftForm extends React.Component {
     return;
   }
 
-  isValid(){
-    return this.exercise.name !== '';
-  }
-
   ddOpts(){
     return [{value: "Bench Press", text: "Bench Press"},
             {value: "Back Squat", text: "Back Squat"},
@@ -132,7 +128,15 @@ class LiftForm extends React.Component {
 }
 
 LiftForm.propTypes = {
-  exercise: PropTypes.object.isRequired
+  exercise: PropTypes.object.isRequired,
+  newSet: PropTypes.shape({
+    name: PropTypes.string,
+    reps: PropTypes.number,
+    weight: PropTypes.number
+  }),
+  saving: PropTypes.bool,
+  onAddSet: PropTypes.func.isRequired,
+  onLiftChange: PropTypes.func.isRequired
 };
 
 export default LiftForm;
