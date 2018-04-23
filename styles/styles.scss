@@ -68,6 +68,30 @@ caption{
   box-shadow: $btn-bevel-down;
 }
 
+.btn__round{
+  align-self: center;
+  margin: 10px;
+  padding: 3px 2px 2px 2px;
+  border-radius: 50%;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  @media screen and (max-width: map-get($grid-breakpoints, md) - 1){
+    transform: rotate(90deg);
+    &:active{
+      margin-bottom:30px;
+    }
+  }
+  @media screen and (min-width: map-get($grid-breakpoints, md)){
+    &:active{
+      margin-left: 0px;
+      margin-right: 20px;
+    }
+  }
+  transition: 0.2s;
+}
+
 .hero{
   background-image: url(/assets/images/squat_hero.jpg);
   background-repeat: no-repeat;
@@ -118,13 +142,23 @@ caption{
   color: #ff2e38;
 }
 
-.color-x{
+.color-purple{
   color: #7c379e;
 }
 
-.color-y{
+.color-green{
   color: #3cce2e;
 }
+
+.form--custom-adder{
+  display: flex;
+}
+
+.form-group__fullWidth{
+  width: 100%;
+}
+
+
 
 // svg.color-y *{
 //   fill: url(#rg);

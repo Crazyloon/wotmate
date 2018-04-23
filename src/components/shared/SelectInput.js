@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SelectInput = ({name, label, onChange, defaultOption, value, error, options}) => {
-  let wrapperClass = 'form-group';
+const SelectInput = ({wrapperClass, name, label, onChange, defaultOption, value, required, error, options}) => {
   let controlClass = 'form-control';
   if(error && error.length > 0){
     wrapperClass += " " + 'has-error';
@@ -17,10 +16,11 @@ const SelectInput = ({name, label, onChange, defaultOption, value, error, option
           name={name}
           value={value}
           onChange={onChange}
+          required={required}
           className={controlClass}>
           <option value="">{defaultOption}</option>
-          {options.map((option) => {
-            return <option key={option.value} value={option.value}>{option.text}</option>;
+          {options.map((option, index) => {
+            return <option key={option.value.id || index} value={option.value}>{option.text}</option>;
           })
           }
         </select>
@@ -31,13 +31,19 @@ const SelectInput = ({name, label, onChange, defaultOption, value, error, option
 };
 
 SelectInput.propTypes = {
+  wrapperClass: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  required: PropTypes.bool,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   defaultOption: PropTypes.string,
   value: PropTypes.string,
   error: PropTypes.string,
   options: PropTypes.arrayOf(PropTypes.object)
+};
+
+SelectInput.defaultProps = {
+  wrapperClass: "form-group"
 };
 
 export default SelectInput;

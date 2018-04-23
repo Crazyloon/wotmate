@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TextInput = ({wrapperClass, name, label, onChange, placeholder, value, error, required}) => {
+const NumberInput = ({wrapperClass, name, label, onChange, placeholder, value, min, max, step, error, required}) => {
     let controlClass = 'form-control';
     if(error && error.length > 0){
         wrapperClass += " " + 'has-error';
@@ -14,31 +14,37 @@ const TextInput = ({wrapperClass, name, label, onChange, placeholder, value, err
             <div className="form-group">
                 <input
                     className={controlClass}
-                    type="text"
+                    type="number"
                     name={name}
                     placeholder={placeholder}
                     value={value}
                     onChange={onChange}
-                    required={required}/>
+                    required={required}
+                    min={min}
+                    max={max}
+                    step={step}/>
                 {error && <div className="invalid-feedback">{error}</div>}
             </div>
         </div>
     );
 };
 
-TextInput.propTypes = {
+NumberInput.propTypes = {
     wrapperClass: PropTypes.string,
     name: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
-    placeholder: PropTypes.string,
-    value: PropTypes.string,
+    placeholder: PropTypes.number,
+    value: PropTypes.number,
+    min: PropTypes.number,
+    max: PropTypes.number,
+    step: PropTypes.number,
     error: PropTypes.string,
     required: PropTypes.bool
 };
 
-TextInput.defaultProps = {
+NumberInput.defaultProps = {
   wrapperClass: "form-group"
 };
 
-export default TextInput;
+export default NumberInput;

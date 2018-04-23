@@ -13,7 +13,7 @@ const FeaturedList = () => {
         </div>
       </div>
       <div className="col-md-4 features--box">
-        <i className="fab fa-wpforms fa-7x color-x"/>
+        <i className="fab fa-wpforms fa-7x color-purple"/>
         <div>
           <p className="features-box--p__emphasis">Log.</p>
           <p>
@@ -22,7 +22,7 @@ const FeaturedList = () => {
         </div>
       </div>
       <div className="col-md-4 features--box">
-        <i className="fas fa-signal fa-7x color-y"/>
+        <i className="fas fa-signal fa-7x color-green"/>
         <div>
           <p className="features-box--p__emphasis">Track.</p>
           <p>
