@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SelectInput from '../shared/SelectInput';
-import TextInput from '../shared/TextInput';
-import NumberInput from '../shared/NumberInput';
+import SelectInput from '../../shared/SelectInput';
+import TextInput from '../../shared/TextInput';
+import NumberInput from '../../shared/NumberInput';
 
 class LiftForm extends React.Component {
   constructor(props){
@@ -58,7 +58,7 @@ class LiftForm extends React.Component {
             defaultOption={"Select Lift Type"}
             value={this.props.newSet.name}
             required
-            error={this.state.errors.name}
+            error={this.state.errors.liftType}
             options={this.state.liftOptions}
             />
 

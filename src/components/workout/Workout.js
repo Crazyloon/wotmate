@@ -8,7 +8,8 @@ const Workout = ({workout}) => {
   return(
     <div className="container workout__container">
       <h5>{workout.name} - {formatTime(workout.date)}</h5>
-      <Table title={workout.name}
+      <Table containerClass={''}
+             title={workout.name}
              exercises={workout.exercises}
       />    
       <div className="workout__actions">

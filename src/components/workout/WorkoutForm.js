@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TextInput from '../shared/TextInput';
 import SelectInput from '../shared/SelectInput';
-import LiftForm from './LiftForm';
-import CardioForm from './CardioForm';
+import LiftForm from './subforms/LiftForm';
+import CardioForm from './subforms/CardioForm';
+import ActivityForm from './subforms/ActivityForm';
 import { workoutTypes } from '../../data/api/workoutApi';
 
 const WorkoutForm = ({ workout, exercise, newSet, customWorkout, onNameChange,
                        onExerciseChange, onLiftChange, onAddSet, onCardioChange,
-                       saving, errors }) => {
+                       onActivityChange, saving, errors }) => {
   let formClass = `needs-validation`;
   let dropDownOptions = [{value: "lift", text: "Lift"}, 
                          {value: "cardio", text:"Cardio"}, 
@@ -28,7 +29,7 @@ const WorkoutForm = ({ workout, exercise, newSet, customWorkout, onNameChange,
             onAddSet={onAddSet}
           />
         );
-      case 'cardio':
+        case 'cardio':
         return (
           <CardioForm
             errors={errors}
@@ -36,6 +37,17 @@ const WorkoutForm = ({ workout, exercise, newSet, customWorkout, onNameChange,
             exercise={exercise}
             newSet={newSet}
             onCardioChange={onCardioChange}
+            onAddSet={onAddSet}
+          />
+        );
+        case 'activity':
+        return (
+          <ActivityForm
+            errors={errors}
+            workout={workout}
+            exercise={exercise}
+            newSet={newSet}
+            onActivityChange={onActivityChange}
             onAddSet={onAddSet}
           />
         );
@@ -82,6 +94,7 @@ WorkoutForm.propTypes = {
   onExerciseChange: PropTypes.func.isRequired,
   onLiftChange: PropTypes.func.isRequired,
   onCardioChange: PropTypes.func.isRequired,
+  onActivityChange: PropTypes.func.isRequired,
   onAddSet: PropTypes.func.isRequired,
   saving: PropTypes.bool,
   errors: PropTypes.object

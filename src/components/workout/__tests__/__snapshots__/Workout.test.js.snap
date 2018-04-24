@@ -189,7 +189,9 @@ ReactWrapper {
            - 
           April 15, 2018, 1:00 PM
         </h5>
-        <div>
+        <div
+          class=""
+        >
           <table
             class="table table-striped table-bordered"
           >
@@ -371,6 +373,7 @@ ReactWrapper {
             April 15, 2018, 1:00 PM
           </h5>,
           <Table
+            containerClass=""
             exercises={
               Array [
                 Object {
@@ -495,6 +498,7 @@ ReactWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
+            "containerClass": "",
             "exercises": Array [
               Object {
                 "sets": Array [
@@ -572,7 +576,9 @@ ReactWrapper {
           },
           "ref": null,
           "rendered": Object {
-            "instance": <div>
+            "instance": <div
+              class=""
+            >
               <table
                 class="table table-striped table-bordered"
               >
@@ -889,6 +895,7 @@ ReactWrapper {
                   </tbody>
                 </table>,
               ],
+              "className": "",
             },
             "ref": null,
             "rendered": Array [
@@ -2539,7 +2546,9 @@ ReactWrapper {
              - 
             April 15, 2018, 1:00 PM
           </h5>
-          <div>
+          <div
+            class=""
+          >
             <table
               class="table table-striped table-bordered"
             >
@@ -2721,6 +2730,7 @@ ReactWrapper {
               April 15, 2018, 1:00 PM
             </h5>,
             <Table
+              containerClass=""
               exercises={
                 Array [
                   Object {
@@ -2845,6 +2855,7 @@ ReactWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
+              "containerClass": "",
               "exercises": Array [
                 Object {
                   "sets": Array [
@@ -2922,7 +2933,9 @@ ReactWrapper {
             },
             "ref": null,
             "rendered": Object {
-              "instance": <div>
+              "instance": <div
+                class=""
+              >
                 <table
                   class="table table-striped table-bordered"
                 >
@@ -3239,6 +3252,7 @@ ReactWrapper {
                     </tbody>
                   </table>,
                 ],
+                "className": "",
               },
               "ref": null,
               "rendered": Array [

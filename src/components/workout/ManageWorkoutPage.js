@@ -22,7 +22,7 @@ function _getDefaultExerciseSet(name, previousSet){
       return {
         name: previousSet.name,
         duration: previousSet.duration || 30,
-        intensity: previousSet.intensity || workoutIntensity.variable                   
+        intensity: previousSet.intensity
       };
     default: 
       return {
@@ -61,6 +61,7 @@ class ManageWorkoutPage extends React.Component {
     this.onExerciseChange = this.onExerciseChange.bind(this);
     this.onLiftChange = this.onLiftChange.bind(this);
     this.onCardioChange = this.onCardioChange.bind(this);
+    this.onActivityChange = this.onActivityChange.bind(this);
     this.onAddSet = this.onAddSet.bind(this);
     //this.onSave = this.onSave.bind(this);
   }
@@ -129,6 +130,19 @@ class ManageWorkoutPage extends React.Component {
     return;
   }
 
+  onActivityChange(e){
+    let {name: key, value} = e.target;
+    const newSet = Object.assign({}, this.state.newSet);
+    if((key === 'duration') && value.length > 0)
+      value = Number.parseFloat(value);
+    newSet[key] = value;
+
+    const exercise = Object.assign({}, this.state.exercise);
+    exercise.sets[0] = newSet;
+    this.setState({newSet: newSet, exercise: exercise});
+    return;
+  }
+
   onAddSet(e){
     event.preventDefault();
 
@@ -173,6 +187,10 @@ class ManageWorkoutPage extends React.Component {
     // handle errors
   }
 
+  isValidExercise(tag){
+    
+  }
+
   render() { 
     return (
       <React.Fragment>
@@ -185,6 +203,7 @@ class ManageWorkoutPage extends React.Component {
           onExerciseChange={this.onExerciseChange} 
           onLiftChange={this.onLiftChange} 
           onCardioChange={this.onCardioChange} 
+          onActivityChange={this.onActivityChange} 
           onAddSet={this.onAddSet}
           onSave={this.onSave} 
           errors={this.state.errors}

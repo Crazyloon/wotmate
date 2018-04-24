@@ -12,6 +12,7 @@ import { workoutTypes, workoutIntensity } from '../../../data/api/workoutApi';
 describe('Table Test', () =>{
   // arange
   const testProps = {
+    containerClass: 'col-md-8',
     id: 'workout0001',
     date: new Date('2018/04/15 14:00'),
     name: 'Table Title',
