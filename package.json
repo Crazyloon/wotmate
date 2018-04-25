@@ -9,7 +9,8 @@
     "open:src": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "testv": "jest --watch --verbose"
   },
   "author": "Russell Dow",
   "license": "MIT",
