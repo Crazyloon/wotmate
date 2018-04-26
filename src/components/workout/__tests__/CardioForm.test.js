@@ -24,7 +24,15 @@ const initialData = {
     sets: []
   },
   newSet: {
-    name: ''
+    name: '',
+    duration: {
+      value: 30,
+      scale: 'sec'
+    },
+    distance: {
+      value: 100,
+      scale: 'yrds'
+    }
   },
   errors: {},
   customWorkout: ''
@@ -47,7 +55,7 @@ describe('Cardio Form', () =>{
   });
   
   it('calls onAddSet', () =>{
-    spy.reset();
+    spy.resetHistory();
     wrapper.find('.btn-primary').first().simulate('click');
     sinon.assert.calledWith(spy);
     sinon.assert.calledOnce(spy);    

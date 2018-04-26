@@ -23,6 +23,14 @@ const Table = ({title, exercises, containerClass}) => {
                       <tr key={idx}>
                         {
                           Object.keys(set).map((key, i) =>{
+                            // if key is weight get value and scale
+                            if (key === "weight" ||
+                                key === "duration" ||
+                                key === "distance"){
+                              return (
+                                <td key={i}>{set[key].value} {set[key].scale}</td>                                
+                              );
+                            }
                             return(
                               <td key={i}>{set[key]}</td>
                             );

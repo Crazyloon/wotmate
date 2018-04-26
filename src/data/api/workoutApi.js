@@ -50,37 +50,58 @@ const workouts = [
           {
             name: 'Bench Press',
             reps: 8,
-            weight: 130
+            weight: {
+              value: 130,
+              scale: 'lbs'
+            }
           },
           {
             name: 'Bench Press',
             reps: 8,
-            weight: 130
+            weight: {
+              value: 130,
+              scale: 'lbs'
+            }
           },
           {
             name: 'Bench Press',
             reps: 8,
-            weight: 130
+            weight: {
+              value: 130,
+              scale: 'lbs'
+            }
           },
           {
             name: 'Incline Bench Press',
             reps: 8,
-            weight: 100
+            weight: {
+              value: 100,
+              scale: 'lbs'
+            }
           },
           {
             name: 'Incline Bench Press',
             reps: 8,
-            weight: 100
+            weight: {
+              value: 100,
+              scale: 'lbs'
+            }
           },
           {
             name: 'Decline Bench Press',
             reps: 8,
-            weight: 80
+            weight: {
+              value: 80,
+              scale: 'lbs'
+            }
           },
           {
             name: 'Decline Bench Press',
             reps: 8,
-            weight: 80
+            weight: {
+              value: 80,
+              scale: 'lbs'
+            }
           }
         ]
       }
@@ -103,32 +124,50 @@ const workouts = [
           {
             name: 'Pullup',
             reps: 8,
-            weight: 'body weight'
+            weight: {
+              value: 'body weight',
+              scale: 'lbs'
+            }
           },
           {
             name: 'Pullup',
             reps: 6,
-            weight: 'body weight'
+            weight: {
+              value: 'body weight',
+              scale: 'lbs'
+            }
           },
           {
             name: 'Deadlift',
             reps: 6,
-            weight: 205
+            weight: {
+              value: 205,
+              scale: 'lbs'
+            }
           },
           {
             name: 'Deadlift',
             reps: 6,
-            weight: 205
+            weight: {
+              value: 205,
+              scale: 'lbs'
+            }
           },
           {
             name: 'Seated Row',
             reps: 6,
-            weight: 105
+            weight: {
+              value: 105,
+              scale: 'lbs'
+            }
           },
           {
             name: 'Seated Row',
             reps: 8,
-            weight: 85
+            weight: {
+              value: 85,
+              scale: 'lbs'
+            }
           }
         ]
       }
@@ -145,23 +184,47 @@ const workouts = [
         sets: [
           {
             name: 'Sprint',
-            duration: 30,
-            distance: 100
+            duration: {
+              value: 30,
+              scale: 'sec'
+            },
+            distance: {
+              value: 100,
+              scale: 'yrd'
+            }
           },
           {
             name: 'Sprint',
-            duration: 30,
-            distance: 100
+            duration: {
+              value: 30,
+              scale: 'sec'
+            },
+            distance: {
+              value: 100,
+              scale: 'yrd'
+            }
           },
           {
             name: 'Sprint',
-            duration: 30,
-            distance: 100
+            duration: {
+              value: 30,
+              scale: 'sec'
+            },
+            distance: {
+              value: 100,
+              scale: 'yrd'
+            }
           },
           {
             name: 'Sprint',
-            duration: 30,
-            distance: 100
+            duration: {
+              value: 30,
+              scale: 'sec'
+            },
+            distance: {
+              value: 100,
+              scale: 'yrd'
+            }
           }
         ]
       },
@@ -171,12 +234,18 @@ const workouts = [
           {
             name: 'Lunges',
             reps: 6,
-            weight: 100
+            weight: {
+              value: 100,
+              scale: 'kgs'
+            }
           },
           {
             name: 'Lunges',
             reps: 6,
-            weight: 100
+            weight: {
+              value: 100,
+              scale: 'kgs'
+            }
           }
         ]
       },
@@ -185,7 +254,10 @@ const workouts = [
         sets: [
           {
             name: 'Yoga',
-            duration: 30,
+            duration: {
+              value: 30,
+              scale: 'min'
+            },
             intensity: workoutIntensity.heavy
           }
         ]

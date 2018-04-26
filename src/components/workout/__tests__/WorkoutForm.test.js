@@ -89,7 +89,15 @@ describe('Workout Form', () => {
   describe('selecting "Lift"', ()=>{
     it('presents the LiftForm', ()=>{
       mountedWrapper.setProps({
-        exercise: {tag: 'lift', type: {}, sets: []}
+        exercise: {tag: 'lift', type: {}, sets: []},
+        newSet: {
+          name: 'Bench Press',
+          reps: 8,
+          weight: {
+            value: 100,
+            scale: 'lbs'
+          }
+        }
       }, () => {mountedWrapper.update();});
     
       expect(mountedWrapper.find('SelectInput').first().props().value).toBe('lift');      
@@ -104,7 +112,18 @@ describe('Workout Form', () => {
   describe('selecting "Cardio"', ()=>{
     it('presents the CardioForm', ()=>{
       mountedWrapper.setProps({
-        exercise: {tag: 'cardio', type: {}, sets: []}
+        exercise: {tag: 'cardio', type: {}, sets: []},
+        newSet: {
+          name: 'Sprint',
+          duration: {
+            value: 30,
+            scale: 'sec'
+          },
+          distance: {
+            value: 100,
+            scale: 'yrds'
+          }
+        }
       }, () => {mountedWrapper.update();});
      
       expect(mountedWrapper.find('SelectInput').first().props().value).toBe('cardio');      
@@ -119,7 +138,15 @@ describe('Workout Form', () => {
   describe('selecting "Activity"', ()=>{
     it('presents the ActivityForm', ()=>{
       mountedWrapper.setProps({
-        exercise: {tag: 'activity', type: {}, sets: []}
+        exercise: {tag: 'activity', type: {}, sets: []},
+        newSet: {
+          name: 'Sprint',
+          duration: {
+            value: 30,
+            scale: 'min'
+          },
+          intensity: 'Variable'
+        }
       }, () => {mountedWrapper.update();});
     
       expect(mountedWrapper.find('SelectInput').first().props().value).toBe('activity');      

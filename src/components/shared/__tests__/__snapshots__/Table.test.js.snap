@@ -167,10 +167,10 @@ ReactWrapper {
                 Sprint
               </td>
               <td>
-                30
+                 
               </td>
               <td>
-                100
+                 
               </td>
             </tr>
           </tbody>
@@ -205,7 +205,7 @@ ReactWrapper {
                 6
               </td>
               <td>
-                100
+                 
               </td>
             </tr>
           </tbody>
@@ -237,7 +237,7 @@ ReactWrapper {
                 Yoga
               </td>
               <td>
-                30
+                 
               </td>
               <td>
                 Heavy
@@ -277,10 +277,10 @@ ReactWrapper {
                   Sprint
                 </td>
                 <td>
-                  30
+                   
                 </td>
                 <td>
-                  100
+                   
                 </td>
               </tr>
             </tbody>
@@ -315,7 +315,7 @@ ReactWrapper {
                   6
                 </td>
                 <td>
-                  100
+                   
                 </td>
               </tr>
             </tbody>
@@ -347,7 +347,7 @@ ReactWrapper {
                   Yoga
                 </td>
                 <td>
-                  30
+                   
                 </td>
                 <td>
                   Heavy
@@ -388,10 +388,10 @@ ReactWrapper {
                   Sprint
                 </td>
                 <td>
-                  30
+                   
                 </td>
                 <td>
-                  100
+                   
                 </td>
               </tr>
             </tbody>
@@ -424,10 +424,10 @@ ReactWrapper {
                     Sprint
                   </td>
                   <td>
-                    30
+                     
                   </td>
                   <td>
-                    100
+                     
                   </td>
                 </tr>
               </tbody>,
@@ -573,10 +573,10 @@ ReactWrapper {
                     Sprint
                   </td>
                   <td>
-                    30
+                     
                   </td>
                   <td>
-                    100
+                     
                   </td>
                 </tr>
               </tbody>,
@@ -589,10 +589,10 @@ ReactWrapper {
                       Sprint
                     </td>
                     <td>
-                      30
+                       
                     </td>
                     <td>
-                      100
+                       
                     </td>
                   </tr>,
                 ],
@@ -605,10 +605,10 @@ ReactWrapper {
                       Sprint
                     </td>
                     <td>
-                      30
+                       
                     </td>
                     <td>
-                      100
+                       
                     </td>
                   </tr>,
                   "key": "0",
@@ -619,10 +619,10 @@ ReactWrapper {
                         Sprint
                       </td>,
                       <td>
-                        30
+                         
                       </td>,
                       <td>
-                        100
+                         
                       </td>,
                     ],
                   },
@@ -645,31 +645,39 @@ ReactWrapper {
                     },
                     Object {
                       "instance": <td>
-                        30
+                         
                       </td>,
                       "key": "1",
                       "nodeType": "host",
                       "props": Object {
-                        "children": 30,
+                        "children": Array [
+                          undefined,
+                          " ",
+                          undefined,
+                        ],
                       },
                       "ref": null,
                       "rendered": Array [
-                        30,
+                        " ",
                       ],
                       "type": "td",
                     },
                     Object {
                       "instance": <td>
-                        100
+                         
                       </td>,
                       "key": "2",
                       "nodeType": "host",
                       "props": Object {
-                        "children": 100,
+                        "children": Array [
+                          undefined,
+                          " ",
+                          undefined,
+                        ],
                       },
                       "ref": null,
                       "rendered": Array [
-                        100,
+                        " ",
                       ],
                       "type": "td",
                     },
@@ -713,7 +721,7 @@ ReactWrapper {
                   6
                 </td>
                 <td>
-                  100
+                   
                 </td>
               </tr>
             </tbody>
@@ -749,7 +757,7 @@ ReactWrapper {
                     6
                   </td>
                   <td>
-                    100
+                     
                   </td>
                 </tr>
               </tbody>,
@@ -898,7 +906,7 @@ ReactWrapper {
                     6
                   </td>
                   <td>
-                    100
+                     
                   </td>
                 </tr>
               </tbody>,
@@ -914,7 +922,7 @@ ReactWrapper {
                       6
                     </td>
                     <td>
-                      100
+                       
                     </td>
                   </tr>,
                 ],
@@ -930,7 +938,7 @@ ReactWrapper {
                       6
                     </td>
                     <td>
-                      100
+                       
                     </td>
                   </tr>,
                   "key": "0",
@@ -944,7 +952,7 @@ ReactWrapper {
                         6
                       </td>,
                       <td>
-                        100
+                         
                       </td>,
                     ],
                   },
@@ -982,16 +990,20 @@ ReactWrapper {
                     },
                     Object {
                       "instance": <td>
-                        100
+                         
                       </td>,
                       "key": "2",
                       "nodeType": "host",
                       "props": Object {
-                        "children": 100,
+                        "children": Array [
+                          undefined,
+                          " ",
+                          undefined,
+                        ],
                       },
                       "ref": null,
                       "rendered": Array [
-                        100,
+                        " ",
                       ],
                       "type": "td",
                     },
@@ -1032,7 +1044,7 @@ ReactWrapper {
                   Yoga
                 </td>
                 <td>
-                  30
+                   
                 </td>
                 <td>
                   Heavy
@@ -1068,7 +1080,7 @@ ReactWrapper {
                     Yoga
                   </td>
                   <td>
-                    30
+                     
                   </td>
                   <td>
                     Heavy
@@ -1217,7 +1229,7 @@ ReactWrapper {
                     Yoga
                   </td>
                   <td>
-                    30
+                     
                   </td>
                   <td>
                     Heavy
@@ -1233,7 +1245,7 @@ ReactWrapper {
                       Yoga
                     </td>
                     <td>
-                      30
+                       
                     </td>
                     <td>
                       Heavy
@@ -1249,7 +1261,7 @@ ReactWrapper {
                       Yoga
                     </td>
                     <td>
-                      30
+                       
                     </td>
                     <td>
                       Heavy
@@ -1263,7 +1275,7 @@ ReactWrapper {
                         Yoga
                       </td>,
                       <td>
-                        30
+                         
                       </td>,
                       <td>
                         Heavy
@@ -1289,16 +1301,20 @@ ReactWrapper {
                     },
                     Object {
                       "instance": <td>
-                        30
+                         
                       </td>,
                       "key": "1",
                       "nodeType": "host",
                       "props": Object {
-                        "children": 30,
+                        "children": Array [
+                          undefined,
+                          " ",
+                          undefined,
+                        ],
                       },
                       "ref": null,
                       "rendered": Array [
-                        30,
+                        " ",
                       ],
                       "type": "td",
                     },
@@ -1427,10 +1443,10 @@ ReactWrapper {
                   Sprint
                 </td>
                 <td>
-                  30
+                   
                 </td>
                 <td>
-                  100
+                   
                 </td>
               </tr>
             </tbody>
@@ -1465,7 +1481,7 @@ ReactWrapper {
                   6
                 </td>
                 <td>
-                  100
+                   
                 </td>
               </tr>
             </tbody>
@@ -1497,7 +1513,7 @@ ReactWrapper {
                   Yoga
                 </td>
                 <td>
-                  30
+                   
                 </td>
                 <td>
                   Heavy
@@ -1537,10 +1553,10 @@ ReactWrapper {
                     Sprint
                   </td>
                   <td>
-                    30
+                     
                   </td>
                   <td>
-                    100
+                     
                   </td>
                 </tr>
               </tbody>
@@ -1575,7 +1591,7 @@ ReactWrapper {
                     6
                   </td>
                   <td>
-                    100
+                     
                   </td>
                 </tr>
               </tbody>
@@ -1607,7 +1623,7 @@ ReactWrapper {
                     Yoga
                   </td>
                   <td>
-                    30
+                     
                   </td>
                   <td>
                     Heavy
@@ -1648,10 +1664,10 @@ ReactWrapper {
                     Sprint
                   </td>
                   <td>
-                    30
+                     
                   </td>
                   <td>
-                    100
+                     
                   </td>
                 </tr>
               </tbody>
@@ -1684,10 +1700,10 @@ ReactWrapper {
                       Sprint
                     </td>
                     <td>
-                      30
+                       
                     </td>
                     <td>
-                      100
+                       
                     </td>
                   </tr>
                 </tbody>,
@@ -1833,10 +1849,10 @@ ReactWrapper {
                       Sprint
                     </td>
                     <td>
-                      30
+                       
                     </td>
                     <td>
-                      100
+                       
                     </td>
                   </tr>
                 </tbody>,
@@ -1849,10 +1865,10 @@ ReactWrapper {
                         Sprint
                       </td>
                       <td>
-                        30
+                         
                       </td>
                       <td>
-                        100
+                         
                       </td>
                     </tr>,
                   ],
@@ -1865,10 +1881,10 @@ ReactWrapper {
                         Sprint
                       </td>
                       <td>
-                        30
+                         
                       </td>
                       <td>
-                        100
+                         
                       </td>
                     </tr>,
                     "key": "0",
@@ -1879,10 +1895,10 @@ ReactWrapper {
                           Sprint
                         </td>,
                         <td>
-                          30
+                           
                         </td>,
                         <td>
-                          100
+                           
                         </td>,
                       ],
                     },
@@ -1905,31 +1921,39 @@ ReactWrapper {
                       },
                       Object {
                         "instance": <td>
-                          30
+                           
                         </td>,
                         "key": "1",
                         "nodeType": "host",
                         "props": Object {
-                          "children": 30,
+                          "children": Array [
+                            undefined,
+                            " ",
+                            undefined,
+                          ],
                         },
                         "ref": null,
                         "rendered": Array [
-                          30,
+                          " ",
                         ],
                         "type": "td",
                       },
                       Object {
                         "instance": <td>
-                          100
+                           
                         </td>,
                         "key": "2",
                         "nodeType": "host",
                         "props": Object {
-                          "children": 100,
+                          "children": Array [
+                            undefined,
+                            " ",
+                            undefined,
+                          ],
                         },
                         "ref": null,
                         "rendered": Array [
-                          100,
+                          " ",
                         ],
                         "type": "td",
                       },
@@ -1973,7 +1997,7 @@ ReactWrapper {
                     6
                   </td>
                   <td>
-                    100
+                     
                   </td>
                 </tr>
               </tbody>
@@ -2009,7 +2033,7 @@ ReactWrapper {
                       6
                     </td>
                     <td>
-                      100
+                       
                     </td>
                   </tr>
                 </tbody>,
@@ -2158,7 +2182,7 @@ ReactWrapper {
                       6
                     </td>
                     <td>
-                      100
+                       
                     </td>
                   </tr>
                 </tbody>,
@@ -2174,7 +2198,7 @@ ReactWrapper {
                         6
                       </td>
                       <td>
-                        100
+                         
                       </td>
                     </tr>,
                   ],
@@ -2190,7 +2214,7 @@ ReactWrapper {
                         6
                       </td>
                       <td>
-                        100
+                         
                       </td>
                     </tr>,
                     "key": "0",
@@ -2204,7 +2228,7 @@ ReactWrapper {
                           6
                         </td>,
                         <td>
-                          100
+                           
                         </td>,
                       ],
                     },
@@ -2242,16 +2266,20 @@ ReactWrapper {
                       },
                       Object {
                         "instance": <td>
-                          100
+                           
                         </td>,
                         "key": "2",
                         "nodeType": "host",
                         "props": Object {
-                          "children": 100,
+                          "children": Array [
+                            undefined,
+                            " ",
+                            undefined,
+                          ],
                         },
                         "ref": null,
                         "rendered": Array [
-                          100,
+                          " ",
                         ],
                         "type": "td",
                       },
@@ -2292,7 +2320,7 @@ ReactWrapper {
                     Yoga
                   </td>
                   <td>
-                    30
+                     
                   </td>
                   <td>
                     Heavy
@@ -2328,7 +2356,7 @@ ReactWrapper {
                       Yoga
                     </td>
                     <td>
-                      30
+                       
                     </td>
                     <td>
                       Heavy
@@ -2477,7 +2505,7 @@ ReactWrapper {
                       Yoga
                     </td>
                     <td>
-                      30
+                       
                     </td>
                     <td>
                       Heavy
@@ -2493,7 +2521,7 @@ ReactWrapper {
                         Yoga
                       </td>
                       <td>
-                        30
+                         
                       </td>
                       <td>
                         Heavy
@@ -2509,7 +2537,7 @@ ReactWrapper {
                         Yoga
                       </td>
                       <td>
-                        30
+                         
                       </td>
                       <td>
                         Heavy
@@ -2523,7 +2551,7 @@ ReactWrapper {
                           Yoga
                         </td>,
                         <td>
-                          30
+                           
                         </td>,
                         <td>
                           Heavy
@@ -2549,16 +2577,20 @@ ReactWrapper {
                       },
                       Object {
                         "instance": <td>
-                          30
+                           
                         </td>,
                         "key": "1",
                         "nodeType": "host",
                         "props": Object {
-                          "children": 30,
+                          "children": Array [
+                            undefined,
+                            " ",
+                            undefined,
+                          ],
                         },
                         "ref": null,
                         "rendered": Array [
-                          30,
+                          " ",
                         ],
                         "type": "td",
                       },

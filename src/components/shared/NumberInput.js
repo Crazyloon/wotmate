@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NumberInput = ({wrapperClass, name, label, onChange, placeholder, value, min, max, step, error, required}) => {
+const NumberInput = ({wrapperClass, name, label, onChange, placeholder, value, scale, min, max, step, error, required}) => {
     let controlClass = 'form-control';
     if(error && error.length > 0){
         wrapperClass += " " + 'has-error';
@@ -22,7 +22,8 @@ const NumberInput = ({wrapperClass, name, label, onChange, placeholder, value, m
                     required={required}
                     min={min}
                     max={max}
-                    step={step}/>
+                    step={step}
+                    data-scale={scale}/>
                 {error && <div className="invalid-feedback">{error}</div>}
             </div>
         </div>
@@ -39,6 +40,7 @@ NumberInput.propTypes = {
     min: PropTypes.number,
     max: PropTypes.number,
     step: PropTypes.number,
+    scale: PropTypes.string,
     error: PropTypes.string,
     required: PropTypes.bool
 };

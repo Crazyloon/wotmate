@@ -102,12 +102,13 @@ class LiftForm extends React.Component {
             name="weight"
             label="Weight"
             placeholder={100}
-            value={this.props.newSet.weight}
+            value={this.props.newSet.weight.value}
             onChange={this.props.onLiftChange}
             required
             min={5}
             max={1000}
             step={5}
+            scale={"lbs"}
             error={this.props.errors.weight}
             />
         </div>
@@ -133,9 +134,16 @@ LiftForm.propTypes = {
   newSet: PropTypes.shape({
     name: PropTypes.string,
     reps: PropTypes.number,
-    weight: PropTypes.number
+    weight: PropTypes.shape({
+      value: PropTypes.number,
+      scale: PropTypes.string
+    })
   }),
-  errors: PropTypes.object,
+  errors: PropTypes.shape({
+    setType: PropTypes.string,
+    reps: PropTypes.string,
+    weight: PropTypes.string
+  }),
   saving: PropTypes.bool,
   onAddSet: PropTypes.func.isRequired,
   onLiftChange: PropTypes.func.isRequired

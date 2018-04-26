@@ -96,12 +96,13 @@ class ActivityForm extends React.Component {
             name="duration"
             label="Duration"
             placeholder={8}
-            value={this.props.newSet.duration}
+            value={this.props.newSet.duration.value}
             onChange={this.props.onActivityChange}
             required
             min={1}
             max={600}
             step={1}
+            scale={'sec'}
             error={this.props.errors.duration}
             />
 
@@ -138,8 +139,20 @@ ActivityForm.propTypes = {
   exercise: PropTypes.object.isRequired,
   onAddSet: PropTypes.func.isRequired,
   onActivityChange: PropTypes.func.isRequired,
-  newSet: PropTypes.object.isRequired,
-  saving: PropTypes.bool
+  newSet: PropTypes.shape({
+    name: PropTypes.string,
+    duration: PropTypes.shape({
+      value: PropTypes.number,
+      scale: PropTypes.string
+    }),
+    intensity: PropTypes.string
+  }),
+  saving: PropTypes.bool,
+  errors: PropTypes.shape({
+    setType: PropTypes.string,
+    duration: PropTypes.string,
+    intensity: PropTypes.string
+  })
 };
 
 export default ActivityForm;

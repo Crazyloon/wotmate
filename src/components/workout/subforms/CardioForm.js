@@ -91,12 +91,13 @@ class CardioForm extends React.Component {
             name="duration"
             label="Duration"
             placeholder={8}
-            value={this.props.newSet.duration}
+            value={this.props.newSet.duration.value}
             onChange={this.props.onCardioChange}
             required
             min={1}
             max={600}
             step={1}
+            scale={'sec'}
             error={this.props.errors.duration}
             />
 
@@ -105,12 +106,13 @@ class CardioForm extends React.Component {
             name="distance"
             label="Distance"
             placeholder={100}
-            value={this.props.newSet.distance}
+            value={this.props.newSet.distance.value}
             onChange={this.props.onCardioChange}
             required
             min={5}
             max={10000}
             step={5}
+            scale={'yrds'}
             error={this.props.errors.distance}
             />
         </div>
@@ -135,7 +137,22 @@ CardioForm.propTypes = {
   exercise: PropTypes.object.isRequired,
   onAddSet: PropTypes.func.isRequired,
   onCardioChange: PropTypes.func.isRequired,
-  newSet: PropTypes.object.isRequired,
+  newSet: PropTypes.shape({
+    name: PropTypes.string,
+    duration: PropTypes.shape({
+      value: PropTypes.number,
+      scale: PropTypes.string
+    }),
+    distance: PropTypes.shape({
+      value: PropTypes.number,
+      scale: PropTypes.string
+    })
+  }),
+  errors: PropTypes.shape({
+    setType: PropTypes.string,
+    duration: PropTypes.string,
+    distance: PropTypes.string
+  }),
   saving: PropTypes.bool
 };
 

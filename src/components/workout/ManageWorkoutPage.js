@@ -17,25 +17,25 @@ function _getDefaultExerciseSet(name, previousSet){
       return {
         name: "",
         reps: previousSet.reps || 8,
-        weight: previousSet.weight || 100                   
+        weight: previousSet.weight || {value: 100, scale: 'lbs'}                   
       };
     case 'cardio':
       return {
         name: "",
-        duration: previousSet.duration || 30,
-        distance: previousSet.distance || 100                   
+        duration: previousSet.duration || {value: 30, scale: 'sec'},
+        distance: previousSet.distance || {value: 100, scale: 'yrds'}                   
       };
     case 'activity':
       return {
         name: "",
-        duration: previousSet.duration || 30,
+        duration: previousSet.duration || {value: 30, scale: 'sec'},
         intensity: previousSet.intensity
       };
     default: 
       return {
         name: "",
         reps: previousSet.reps || 8,
-        weight: previousSet.weight || 100                   
+        weight: previousSet.weight || {value: 100, scale: 'lbs'}                   
       };
   }
 }
@@ -79,18 +79,6 @@ class ManageWorkoutPage extends React.Component {
     // if (saveBtn && !saveBtn.classList.contains("fa-plus")){
     //   saveBtn.classList.add("fa-plus");
     // }
-  }
-
-  isFormValid(fieldCheck){
-    let isValid = true;
-    let errors = {};
-    if(this.state.exercise.sets.length < 1){
-      errors.name = 'Give the workout a longer name (3 character minimum).';
-      isValid = false;
-    }
-    // TODO ADD MORE VALIDATION.
-    this.setState({errors: errors});
-    return isValid;
   }
 
   onNameChange(e){
@@ -138,11 +126,16 @@ class ManageWorkoutPage extends React.Component {
     delete errors.reps;
     delete errors.weight;
 
-    let {name: key, value} = e.target;
+    let {name: key, value, dataset} = e.target;
     const newSet = Object.assign({}, this.state.newSet);
-    if((key === 'reps' || key === 'weight') && value.length > 0)
+    if((key === 'reps' || key === 'weight') && value.length > 0){
       value = Number.parseFloat(value);
-    newSet[key] = value;
+      if(key === 'weight'){
+        newSet.weight.value = value;
+        newSet.weight.scale = dataset.scale;
+      }
+    } else
+      newSet[key] = value;
 
     const exercise = Object.assign({}, this.state.exercise);
     exercise.sets[0] = newSet;

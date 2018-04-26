@@ -24,7 +24,12 @@ const initialData = {
     sets: []
   },
   newSet: {
-    name: ''
+    name: '',
+    reps: 1,
+    weight: {
+      value: 100,
+      scale: 'lbs'
+    }
   },
   errors: {},
   customWorkout: ''
@@ -47,7 +52,7 @@ describe('Lift Form', () =>{
   });
 
   it('calls onAddSet', () =>{
-    spy.reset();
+    spy.resetHistory();
     wrapper.find('.btn-primary').first().simulate('click');
     sinon.assert.calledWith(spy);
     sinon.assert.calledOnce(spy);    
@@ -55,7 +60,7 @@ describe('Lift Form', () =>{
   
   describe('Custom Lift Type', () =>{
     it('calls onCustomLiftChange', () =>{
-      spy.reset();
+      spy.resetHistory();
 
       const mountedWrapper = mount(<LiftForm 
         {...initialData}

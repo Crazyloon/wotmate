@@ -24,7 +24,12 @@ const initialData = {
     sets: []
   },
   newSet: {
-    name: ''
+    name: '',
+    duration: {
+      value: 30,
+      scale: 'min'
+    },
+    intensity: 'variable'
   },
   errors: {},
   customWorkout: ''
@@ -47,7 +52,7 @@ describe('Activity Form', () =>{
   });
 
   it('calls onAddSet', () =>{
-    spy.reset();
+    spy.resetHistory();
     wrapper.find('.btn-primary').first().simulate('click');
     sinon.assert.calledWith(spy);
     sinon.assert.calledOnce(spy);    
