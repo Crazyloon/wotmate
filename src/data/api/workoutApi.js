@@ -202,6 +202,16 @@ class WorkoutApi {
       }, 1000);
     });
   }
+
+  static addWorkout(workout){
+    return new Promise((resolve, reject) =>{
+      setTimeout(() => {
+        workouts.push(workout);
+        resolve(workouts);
+        console.log(workouts);
+      }, 1000);
+    });
+  }
 }
 
 export default WorkoutApi;

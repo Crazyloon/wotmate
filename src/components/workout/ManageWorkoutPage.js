@@ -1,8 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router-dom';
+
+import WorkoutApi, { workoutTypes, workoutIntensity } from '../../data/api/workoutApi';
+import * as workoutActions from '../../data/actions/workoutActions';
+
 import WorkoutForm from './WorkoutForm';
 import Table from '../shared/Table';
-import { workoutTypes, workoutIntensity } from '../../data/api/workoutApi';
+import Button from '../shared/Button';
 
 function _getDefaultExerciseSet(name, previousSet){
   switch(name){
@@ -32,13 +39,12 @@ function _getDefaultExerciseSet(name, previousSet){
       };
   }
 }
-
 class ManageWorkoutPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       workout: {
-        id: 'workout001',
+        id: 'workout004',
         date: '',
         name: '',
         muscles: [],
@@ -63,7 +69,16 @@ class ManageWorkoutPage extends React.Component {
     this.onCardioChange = this.onCardioChange.bind(this);
     this.onActivityChange = this.onActivityChange.bind(this);
     this.onAddSet = this.onAddSet.bind(this);
-    //this.onSave = this.onSave.bind(this);
+    this.onSaveWorkout = this.onSaveWorkout.bind(this);
+  }
+
+  
+  componentDidUpdate(){
+    // Hack in the icon for SVGs in a React Element
+    // const saveBtn = document.querySelector("#saveWorkout > svg");
+    // if (saveBtn && !saveBtn.classList.contains("fa-plus")){
+    //   saveBtn.classList.add("fa-plus");
+    // }
   }
 
   isFormValid(fieldCheck){
@@ -187,8 +202,24 @@ class ManageWorkoutPage extends React.Component {
     // handle errors
   }
 
+  onSaveWorkout(e){
+    const workout = Object.assign({}, this.state.workout);
+    workout.id = 'workout004';
+    workout.date = new Date();
+    // dispatch call to add the workout
+    this.props.actions.addWorkout(workout)
+      .then(() => {
+        this.props.history.push('/workouts');
+      })
+      .catch(error => {
+        throw(error);
+      });
+    //WorkoutApi.addWorkout(workout);
+    //console.log(this.state.workout);
+  }
+
   isValidExercise(tag){
-    
+
   }
 
   render() { 
@@ -214,10 +245,32 @@ class ManageWorkoutPage extends React.Component {
           containerClass={"col-md-8 offset-md-2 marginTop__20"}
           exercises={this.state.workout.exercises}
           title="New Workout"/>
+
+        {
+        this.state.workout.exercises.length > 0 ? 
+          <div className="col-md-8 offset-md-2 button--save__rightAlign">
+            <Button
+              id={'saveWorkout'}
+              styleClass={"btn btn-primary bevel bevel-md"}
+              type="button"
+              diabled={this.state.saving}
+              value={this.state.saving ? 'Saving...' : 'Save Workout'}
+              onClick={this.onSaveWorkout}
+              icon={<i className="fas fa-plus"/>}
+              text={"Save Workout"}
+            />  
+          </div>
+        : null
+        }
       </React.Fragment>
     );
   }
 }
+
+ManageWorkoutPage.propTypes = {
+  history: PropTypes.object,
+  actions: PropTypes.object.isRequired
+};
  
 function mapStateToProps(state, ownProps){
   let workout = {
@@ -237,4 +290,10 @@ function mapStateToProps(state, ownProps){
   };
 }
 
-export default connect(mapStateToProps)(ManageWorkoutPage);
+function mapDispatchToProps(dispatch){
+  return {
+    actions: bindActionCreators(workoutActions, dispatch)
+  };
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ManageWorkoutPage));

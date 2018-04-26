@@ -9,7 +9,7 @@ class LiftForm extends React.Component {
     super(props);
     
     this.state = {
-      customWorkout: {text: '', value: ''},
+      customLift: {text: '', value: ''},
       errors: {},
       liftOptions: this.ddOpts()
     };
@@ -20,21 +20,21 @@ class LiftForm extends React.Component {
 
   onCustomLiftChange(event){
     let {name: key, value} = event.target;
-    const customWorkout = Object.assign({}, this.state.customWorkout);
-    customWorkout.text = value;
-    customWorkout.value = value;
-    this.setState({customWorkout: customWorkout});
+    const customLift = Object.assign({}, this.state.customLift);
+    customLift.text = value;
+    customLift.value = value;
+    this.setState({customLift: customLift});
   }
 
   onAddCustomLift(event){
-    if(this.state.customWorkout.text.length > 3){
+    if(this.state.customLift.text.length > 3){
       const liftOpts = Object.assign([], this.state.liftOptions);
-      liftOpts.push(this.state.customWorkout);
-      this.setState({liftOptions: liftOpts, customWorkout: {text: '', value: ''}});
+      liftOpts.push(this.state.customLift);
+      this.setState({liftOptions: liftOpts, customLift: {text: '', value: ''}});
       return;
     }
     const errors = Object.assign({}, this.state.errors);
-    errors.customWorkout = 'Please give the workout a more descriptive name.';
+    errors.customLift = 'Please give the workout a more descriptive name.';
     this.setState({errors: errors});
     return;
   }
@@ -71,12 +71,12 @@ class LiftForm extends React.Component {
       
               <TextInput
                 wrapperClass={"form-group fullWidth"}
-                name="customWorkout"
+                name="customLift"
                 label="Custom Lift Type"
                 placeholder="Lunges"
-                value={this.state.customWorkout.text}
+                value={this.state.customLift.text}
                 onChange={this.onCustomLiftChange}
-                error={this.state.errors.customWorkout}
+                error={this.state.errors.customLift}
                 />
           </div>
         </div>

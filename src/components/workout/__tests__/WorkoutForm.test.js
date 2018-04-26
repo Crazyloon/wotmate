@@ -9,46 +9,47 @@ Enzyme.configure({
 
 import WorkoutForm from '../WorkoutForm'; 
 
+// arrange
+const initialData = {
+  workout: {
+    id: '',
+    date: '',
+    name: '',
+    muscles: [],
+    exercises: []
+  },
+  exercise: {
+    tag: '',
+    type: {},
+    sets: []
+  },
+  newSet: {
+    name: ''
+  },
+  saving: false,
+  errors: {},
+  customWorkout: ''
+};
+
+const onChangeMock = jest.fn();
+
+const mountedWrapper = mount(<WorkoutForm 
+  workout={initialData.workout}
+  exercise={initialData.exercise}
+  newSet={initialData.newSet}
+  customWorkout={initialData.customWorkout} 
+  onNameChange={onChangeMock} 
+  onExerciseChange={onChangeMock} 
+  onLiftChange={onChangeMock} 
+  onCardioChange={onChangeMock} 
+  onActivityChange={onChangeMock} 
+  onAddSet={onChangeMock}
+  onSave={onChangeMock} 
+  errors={initialData.errors}
+  saving={initialData.saving}
+/>);
+
 describe('Workout Form', () => {
-  // arrange
-  const initialData = {
-    workout: {
-      id: '',
-      date: '',
-      name: '',
-      muscles: [],
-      exercises: []
-    },
-    exercise: {
-      tag: '',
-      type: {},
-      sets: []
-    },
-    newSet: {
-      name: ''
-    },
-    saving: false,
-    errors: {},
-    customWorkout: ''
-  };
-
-  const onChangeMock = jest.fn();
-
-  const mountedWrapper = mount(<WorkoutForm 
-    workout={initialData.workout}
-    exercise={initialData.exercise}
-    newSet={initialData.newSet}
-    customWorkout={initialData.customWorkout} 
-    onNameChange={onChangeMock} 
-    onExerciseChange={onChangeMock} 
-    onLiftChange={onChangeMock} 
-    onCardioChange={onChangeMock} 
-    onActivityChange={onChangeMock} 
-    onAddSet={onChangeMock}
-    onSave={onChangeMock} 
-    errors={initialData.errors}
-    saving={initialData.saving}
-  />);
 
   describe('initial form state', () =>{
     it('has a name text input', ()=>{
