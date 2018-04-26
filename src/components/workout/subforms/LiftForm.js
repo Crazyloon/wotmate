@@ -10,7 +10,9 @@ class LiftForm extends React.Component {
     
     this.state = {
       customLift: {text: '', value: ''},
-      errors: {},
+      errors: {
+        customLift: true
+      },
       liftOptions: this.ddOpts()
     };
 
@@ -20,23 +22,22 @@ class LiftForm extends React.Component {
 
   onCustomLiftChange(event){
     let {name: key, value} = event.target;
+    const errors = Object.assign({}, this.state.errors);
+    errors.customLift = value.length < 3;
     const customLift = Object.assign({}, this.state.customLift);
     customLift.text = value;
     customLift.value = value;
-    this.setState({customLift: customLift});
+    this.setState({customLift: customLift, errors: errors});
   }
 
   onAddCustomLift(event){
-    if(this.state.customLift.text.length > 3){
-      const liftOpts = Object.assign([], this.state.liftOptions);
-      liftOpts.push(this.state.customLift);
-      this.setState({liftOptions: liftOpts, customLift: {text: '', value: ''}});
-      return;
-    }
-    const errors = Object.assign({}, this.state.errors);
-    errors.customLift = 'Please give the workout a more descriptive name.';
-    this.setState({errors: errors});
-    return;
+    const liftOpts = Object.assign([], this.state.liftOptions);
+    liftOpts.push(this.state.customLift);
+    this.setState({
+      liftOptions: liftOpts,
+      customLift: {text: '', value: ''},
+      errors: {customLift: true}
+    });
   }
 
   ddOpts(){
@@ -58,14 +59,15 @@ class LiftForm extends React.Component {
             defaultOption={"Select Lift Type"}
             value={this.props.newSet.name}
             required
-            error={this.state.errors.liftType}
+            error={this.props.errors.setType}
             options={this.state.liftOptions}
             />
 
           <div className="col-md-6 form--custom-adder">
               <button onClick={this.onAddCustomLift}
                       className="btn btn-secondary btn__round" 
-                      type="button">
+                      type="button"
+                      disabled={this.state.errors.customLift}>
                 <i className="fas fa-arrow-alt-circle-left fa-2x"/>
               </button>
       
@@ -76,7 +78,6 @@ class LiftForm extends React.Component {
                 placeholder="Lunges"
                 value={this.state.customLift.text}
                 onChange={this.onCustomLiftChange}
-                error={this.state.errors.customLift}
                 />
           </div>
         </div>
@@ -93,7 +94,7 @@ class LiftForm extends React.Component {
             min={1}
             max={100}
             step={1}
-            error={this.state.errors.reps}
+            error={this.props.errors.reps}
             />
 
           <NumberInput
@@ -107,7 +108,7 @@ class LiftForm extends React.Component {
             min={5}
             max={1000}
             step={5}
-            error={this.state.errors.weight}
+            error={this.props.errors.weight}
             />
         </div>
 
@@ -134,6 +135,7 @@ LiftForm.propTypes = {
     reps: PropTypes.number,
     weight: PropTypes.number
   }),
+  errors: PropTypes.object,
   saving: PropTypes.bool,
   onAddSet: PropTypes.func.isRequired,
   onLiftChange: PropTypes.func.isRequired

@@ -79,17 +79,21 @@ caption{
   max-height: 40px;
   @media screen and (max-width: map-get($grid-breakpoints, md) - 1){
     transform: rotate(90deg);
-    &:active{
+    &:active:not(:disabled){
       margin-bottom:30px;
     }
   }
   @media screen and (min-width: map-get($grid-breakpoints, md)){
-    &:active{
+    &:active:not(:disabled){
       margin-left: 0px;
       margin-right: 20px;
     }
   }
   transition: 0.2s;
+}
+
+.btn__round:disabled{
+  cursor: not-allowed;
 }
 
 .hero{

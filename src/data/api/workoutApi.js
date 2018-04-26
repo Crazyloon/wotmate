@@ -194,6 +194,9 @@ const workouts = [
   }
 ];
 
+let currentId = 0;
+
+
 class WorkoutApi {
   static getAllWorkouts(){
     return new Promise((resolve, reject) => {
@@ -207,10 +210,14 @@ class WorkoutApi {
     return new Promise((resolve, reject) =>{
       setTimeout(() => {
         workouts.push(workout);
-        resolve(workouts);
-        console.log(workouts);
+        resolve(Object.assign([], workouts));
       }, 1000);
     });
+  }
+
+  static getNextId(){
+    currentId = currentId + 1;
+    return currentId.toString().padStart(12, "0");
   }
 }
 

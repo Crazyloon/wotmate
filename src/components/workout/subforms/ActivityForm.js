@@ -15,7 +15,9 @@ class ActivityForm extends React.Component {
     
     this.state = {
       customActivity: {text: '', value: ''},
-      errors: {},
+      errors: {
+        customCardio: true
+      },
       activityOptions: this.ddOpts()
     };
 
@@ -25,18 +27,22 @@ class ActivityForm extends React.Component {
 
   onCustomActivityChange(event){
     let {name: key, value} = event.target;
+    const errors = Object.assign({}, this.state.errors);
+    errors.customActivity = value.length < 3;
     const customActivity = Object.assign({}, this.state.customActivity);
     customActivity.text = value;
     customActivity.value = value;
-    this.setState({customActivity: customActivity});
+    this.setState({customActivity: customActivity, errors: errors});
   }
 
   onAddCustomActivity(event){
-    if(this.state.customActivity.text != ''){
       const activityOpts = Object.assign([], this.state.activityOptions);
       activityOpts.push(this.state.customActivity);
-      this.setState({activityOptions: activityOpts, customActivity: {text: '', value: ''}});
-    }
+      this.setState({
+        activityOptions: activityOpts,
+        customActivity: {text: '', value: ''},
+        errors: {customActivity: true}
+    });
   }
   // TODO: Remove this and pull the data from an API
   ddOpts(){
@@ -61,14 +67,15 @@ class ActivityForm extends React.Component {
             defaultOption={"Select Activity Type"}
             value={this.props.newSet.name}
             required
-            error={this.state.errors.activityType}
+            error={this.props.errors.setType}
             options={this.state.activityOptions}
             />
 
           <div className="col-md-6 form--custom-adder">
               <button onClick={this.onAddCustomActivity}
                       className="btn btn-secondary btn__round" 
-                      type="button">
+                      type="button"
+                      disabled={this.state.errors.customActivity}>
                 <i className="fas fa-arrow-alt-circle-left fa-2x"/>
               </button>
       
@@ -79,7 +86,6 @@ class ActivityForm extends React.Component {
                 placeholder="Karate"
                 value={this.state.customActivity.text}
                 onChange={this.onCustomActivityChange}
-                error={this.state.errors.customActivity}
                 />
           </div>
         </div>
@@ -96,7 +102,7 @@ class ActivityForm extends React.Component {
             min={1}
             max={600}
             step={1}
-            error={this.state.errors.duration}
+            error={this.props.errors.duration}
             />
 
           <SelectInput
@@ -107,7 +113,7 @@ class ActivityForm extends React.Component {
             defaultOption={"Select Intensity Level"}
             value={this.props.newSet.intensity}
             required
-            error={this.state.errors.intensity}
+            error={this.props.errors.intensity}
             options={intensityOptions}
             />
         </div>

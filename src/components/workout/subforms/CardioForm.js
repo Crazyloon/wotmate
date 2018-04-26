@@ -10,8 +10,10 @@ class CardioForm extends React.Component {
     
     this.state = {
       customCardio: {text: '', value: ''},
-      errors: {},
-      liftOptions: this.ddOpts()
+      errors: {
+        customCardio: true
+      },
+      cardioOptions: this.ddOpts()
     };
 
     this.onCustomCardioChange = this.onCustomCardioChange.bind(this);
@@ -20,18 +22,22 @@ class CardioForm extends React.Component {
 
   onCustomCardioChange(event){
     let {name: key, value} = event.target;
+    const errors = Object.assign({}, this.state.errors);
+    errors.customCardio = value.length < 3;
     const customCardio = Object.assign({}, this.state.customCardio);
     customCardio.text = value;
     customCardio.value = value;
-    this.setState({customCardio: customCardio});
+    this.setState({customCardio: customCardio, errors: errors});
   }
 
   onAddCustomCardio(event){
-    if(this.state.customCardio.text != ''){
-      const liftOpts = Object.assign([], this.state.liftOptions);
-      liftOpts.push(this.state.customCardio);
-      this.setState({liftOptions: liftOpts, customCardio: {text: '', value: ''}});
-    }
+    const cardioOpts = Object.assign([], this.state.cardioOptions);
+    cardioOpts.push(this.state.customCardio);
+    this.setState({
+        cardioOptions: cardioOpts, 
+        customCardio: {text: '', value: ''},
+        errors: {customCardio: true}
+      });
   }
   // TODO: Remove this and pull the data from an API
   ddOpts(){
@@ -56,14 +62,15 @@ class CardioForm extends React.Component {
             defaultOption={"Select Cardio Type"}
             value={this.props.newSet.name}
             required
-            error={this.state.errors.cardioType}
-            options={this.state.liftOptions}
+            error={this.props.errors.setType}
+            options={this.state.cardioOptions}
             />
 
           <div className="col-md-6 form--custom-adder">
               <button onClick={this.onAddCustomCardio}
                       className="btn btn-secondary btn__round" 
-                      type="button">
+                      type="button"
+                      disabled={this.state.errors.customCardio}>                      
                 <i className="fas fa-arrow-alt-circle-left fa-2x"/>
               </button>
       
@@ -71,10 +78,9 @@ class CardioForm extends React.Component {
                 wrapperClass={"form-group fullWidth"}
                 name="customCardio"
                 label="Custom Cardio Type"
-                placeholder="Circut"
+                placeholder="HIIT"
                 value={this.state.customCardio.text}
                 onChange={this.onCustomCardioChange}
-                error={this.state.errors.customCardio}
                 />
           </div>
         </div>
@@ -91,7 +97,7 @@ class CardioForm extends React.Component {
             min={1}
             max={600}
             step={1}
-            error={this.state.errors.duration}
+            error={this.props.errors.duration}
             />
 
           <NumberInput
@@ -105,7 +111,7 @@ class CardioForm extends React.Component {
             min={5}
             max={10000}
             step={5}
-            error={this.state.errors.distance}
+            error={this.props.errors.distance}
             />
         </div>
 

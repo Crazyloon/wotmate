@@ -15,25 +15,25 @@ function _getDefaultExerciseSet(name, previousSet){
   switch(name){
     case 'lift': 
       return {
-        name: previousSet.name,
+        name: "",
         reps: previousSet.reps || 8,
         weight: previousSet.weight || 100                   
       };
     case 'cardio':
       return {
-        name: previousSet.name,
+        name: "",
         duration: previousSet.duration || 30,
         distance: previousSet.distance || 100                   
       };
     case 'activity':
       return {
-        name: previousSet.name,
+        name: "",
         duration: previousSet.duration || 30,
         intensity: previousSet.intensity
       };
     default: 
       return {
-        name: previousSet.name,
+        name: "",
         reps: previousSet.reps || 8,
         weight: previousSet.weight || 100                   
       };
@@ -94,15 +94,27 @@ class ManageWorkoutPage extends React.Component {
   }
 
   onNameChange(e){
+    const errors = Object.assign({}, this.state.errors);
+    delete errors.name;
+
     const {name: key, value } = e.target;
     const workout = Object.assign({}, this.state.workout);
     workout[key] = value;
     this.setState({
-      workout: workout
+      workout: workout,
+      errors: errors
     });
   }
 
   onExerciseChange(event){ // Exercise Type Drop Down
+    const errors = Object.assign({}, this.state.errors);
+    delete errors.setType;
+    delete errors.reps;
+    delete errors.weight;
+    delete errors.distance;
+    delete errors.duration;
+    delete errors.intensity;
+
     const {name: key, value } = event.target;
     let exercise = Object.assign({}, this.state.exercise);
     if(key === 'type'){
@@ -113,13 +125,19 @@ class ManageWorkoutPage extends React.Component {
     this.setState((previousState) => {
       return {
         exercise: exercise,
-        newSet: _getDefaultExerciseSet(value, previousState.newSet)
+        newSet: _getDefaultExerciseSet(value, previousState.newSet),
+        errors: errors
       };
     });
     return;
   }
 
   onLiftChange(e){
+    const errors = Object.assign({}, this.state.errors);
+    delete errors.setType;
+    delete errors.reps;
+    delete errors.weight;
+
     let {name: key, value} = e.target;
     const newSet = Object.assign({}, this.state.newSet);
     if((key === 'reps' || key === 'weight') && value.length > 0)
@@ -128,11 +146,16 @@ class ManageWorkoutPage extends React.Component {
 
     const exercise = Object.assign({}, this.state.exercise);
     exercise.sets[0] = newSet;
-    this.setState({newSet: newSet, exercise: exercise});
+    this.setState({newSet: newSet, exercise: exercise, errors: errors});
     return;
   }
 
   onCardioChange(e){
+    const errors = Object.assign({}, this.state.errors);
+    delete errors.setType;
+    delete errors.duration;
+    delete errors.distance;
+
     let {name: key, value} = e.target;
     const newSet = Object.assign({}, this.state.newSet);
     if((key === 'duration' || key === 'distance') && value.length > 0)
@@ -141,11 +164,16 @@ class ManageWorkoutPage extends React.Component {
 
     const exercise = Object.assign({}, this.state.exercise);
     exercise.sets[0] = newSet;
-    this.setState({newSet: newSet, exercise: exercise});
+    this.setState({newSet: newSet, exercise: exercise, errors: errors});
     return;
   }
 
   onActivityChange(e){
+    const errors = Object.assign({}, this.state.errors);
+    delete errors.setType;
+    delete errors.duration;
+    delete errors.intensity;
+
     let {name: key, value} = e.target;
     const newSet = Object.assign({}, this.state.newSet);
     if((key === 'duration') && value.length > 0)
@@ -154,32 +182,28 @@ class ManageWorkoutPage extends React.Component {
 
     const exercise = Object.assign({}, this.state.exercise);
     exercise.sets[0] = newSet;
-    this.setState({newSet: newSet, exercise: exercise});
+    this.setState({newSet: newSet, exercise: exercise, errors: errors});
     return;
   }
 
   onAddSet(e){
     event.preventDefault();
 
-    // check for valid state
-    //if (!this.isFormValid()) return;
     const workout = Object.assign({}, this.state.workout);
+    const newSet = Object.assign({}, this.state.newSet);
     const exercises = workout.exercises;
-    // get exercise type
-    const exerciseType = this.state.exercise.type;
-    if(exerciseType === ''){
-      const errors = Object.assign({}, this.state.errors);
-      errors.type = "Select workout type to add a set.";
-      this.setState({errors: errors});
+    
+    if(!this.isValidSet(newSet))
       return;
-    }
-    // if exercises has that type
+    
+    const exerciseType = this.state.exercise.type;
     let sets;
+    // if an exercise already has a key for that type
+    // add newSet to the sets list for that exercise type
     exercises.forEach(ex => {
       if(ex.type === exerciseType){
-        //  add exercise set to sets for that exercise type
         sets = ex.sets;
-        sets.push(this.state.newSet); // can push newSet
+        sets.push(newSet);
       }
     });
     // else push the whole exercise to the list
@@ -192,9 +216,9 @@ class ManageWorkoutPage extends React.Component {
       return {
         workout: workout,
         exercise: {
-          tag: this.state.exercise.tag,
-          type: this.state.exercise.type,
-          sets: [this.state.newSet]
+          tag: prevState.exercise.tag,
+          type: prevState.exercise.type,
+          sets: [prevState.newSet]
         }
       };
     });
@@ -204,7 +228,9 @@ class ManageWorkoutPage extends React.Component {
 
   onSaveWorkout(e){
     const workout = Object.assign({}, this.state.workout);
-    workout.id = 'workout004';
+    if(!this.isValidWorkout(workout))
+      return;
+    workout.id = WorkoutApi.getNextId();
     workout.date = new Date();
     // dispatch call to add the workout
     this.props.actions.addWorkout(workout)
@@ -214,12 +240,56 @@ class ManageWorkoutPage extends React.Component {
       .catch(error => {
         throw(error);
       });
-    //WorkoutApi.addWorkout(workout);
-    //console.log(this.state.workout);
   }
 
-  isValidExercise(tag){
+  isValidWorkout(workout){
+    let isValid = true;
+    
+    if(workout.name.length < 1){
+      let errors = Object.assign({}, this.state.errors);
+      errors.name = "Give your workout a name.";
+      this.setState({errors: errors});
+      return isValid = false;
+    }
+    return isValid;
+  }
 
+  // TODO: Hande siuations where set.key is empty string
+  isValidSet(set){
+    let isValid = true;
+    let errors = Object.assign({}, this.state.errors);
+
+    if(set.name === ""){
+      errors.setType = "No cheating! Select the type of exercise you did!";
+      isValid = false;
+    }
+    // LIFT SET
+    if(set.hasOwnProperty('reps') && set.reps < 1){
+      errors.reps = "C'mon, you can do at least one rep!";
+      isValid = false;
+    }
+    if(set.hasOwnProperty('weight') && set.weight < 1){
+      errors.weight = "Lifting nothing doesn't count!";
+      isValid = false;
+    }
+    // CARDIO SET
+    if(set.hasOwnProperty('distance') && set.distance < 1){
+      errors.distance = "You gotta move your ass if you want to log this set!";
+      isValid = false;
+    }
+    // ACTIVITY SET
+    if(set.hasOwnProperty('intensity') && set.intensity == ""){
+      errors.intensity = "Don't be shy. What intensity level did you really exert?";
+      isValid = false;
+    }
+    // CARDIO AND ACTIVITY SET
+    if(set.hasOwnProperty('duration') && set.duration < 1){
+      errors.duration = "You can't expect me to log this!";
+      isValid = false;
+    }
+
+    this.setState({errors: errors});
+    return isValid;
   }
 
   render() { 
@@ -273,17 +343,6 @@ ManageWorkoutPage.propTypes = {
 };
  
 function mapStateToProps(state, ownProps){
-  let workout = {
-    id: 'workout001',
-    date: new Date('2018/04/15 2:00'),
-    name: 'Chest',
-    muscles: [
-      'Pectoralis Major',
-      'Pectoralis Minor',
-      'Pecotralis Duh!'
-    ],
-    exercises: []
-  };
 
   return{
     workout: state.workout
