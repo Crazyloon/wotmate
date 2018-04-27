@@ -1,10 +1,10 @@
 # wotmate (Workout Tracker Mate)
 Personal Workout Tracking Web Application
-
-#### About:
+### About:
 This is a personal project I recently started, to learn React. The goal is to develop an application that allows users to quickly track workouts and provide graphical feedback on how they've been progressing. I plan to include charts, saved routines, and exercises, including images and how-to videos or links to them.
 
-#### Current Priorities:
+
+### Current Priorities:
 ##### ManageWorkout 
 - Adjust various scales for each set (duration/distance/weight)
 - Validation
@@ -14,7 +14,8 @@ This is a personal project I recently started, to learn React. The goal is to de
 - Add Week View
 - Show a list of workouts for each week
 
-#### Developed with:
+
+### Developed with:
 ##### Front End:
 - ReactDOM v16+
 - Redux v4+
