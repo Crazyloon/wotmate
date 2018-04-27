@@ -9,13 +9,14 @@ import { workoutTypes } from '../../data/api/workoutApi';
 
 const WorkoutForm = ({ workout, exercise, newSet, customWorkout, onNameChange,
                        onExerciseChange, onLiftChange, onAddSet, onCardioChange,
-                       onActivityChange, saving, errors }) => {
+                       onActivityChange, onScaleChange, saving, errors,
+                       durationOptions, weightOptions, distanceOptions,
+                       durationScale, weightScale, distanceScale}) => {
   let formClass = `needs-validation`;
   let dropDownOptions = [{value: "lift", text: "Lift"}, 
                          {value: "cardio", text:"Cardio"}, 
                          {value: "activity", text:"Activity"}];
   // errors.style ? formClass = 'needs-validation was-validated' : null;
-
   function form(tag){
     switch(tag){
       case 'lift':
@@ -27,6 +28,9 @@ const WorkoutForm = ({ workout, exercise, newSet, customWorkout, onNameChange,
             newSet={newSet}
             onLiftChange={onLiftChange}
             onAddSet={onAddSet}
+            onScaleChange={onScaleChange}
+            weightOptions={weightOptions}
+            weightScale={weightScale}
           />
         );
         case 'cardio':
@@ -38,6 +42,11 @@ const WorkoutForm = ({ workout, exercise, newSet, customWorkout, onNameChange,
             newSet={newSet}
             onCardioChange={onCardioChange}
             onAddSet={onAddSet}
+            onScaleChange={onScaleChange}
+            durationOptions={durationOptions}
+            distanceOptions={distanceOptions}
+            durationScale={durationScale}
+            distanceScale={distanceScale}
           />
         );
         case 'activity':
@@ -49,6 +58,9 @@ const WorkoutForm = ({ workout, exercise, newSet, customWorkout, onNameChange,
             newSet={newSet}
             onActivityChange={onActivityChange}
             onAddSet={onAddSet}
+            onScaleChange={onScaleChange}
+            durationOptions={durationOptions}
+            durationScale={durationScale}
           />
         );
     }

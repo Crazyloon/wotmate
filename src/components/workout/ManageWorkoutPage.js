@@ -17,13 +17,13 @@ function _getDefaultExerciseSet(name, previousSet){
       return {
         name: "",
         reps: previousSet.reps || 8,
-        weight: previousSet.weight || {value: 100, scale: 'lbs'}                   
+        weight: previousSet.weight || {value: 100, scale: 'lb'}                   
       };
     case 'cardio':
       return {
         name: "",
         duration: previousSet.duration || {value: 30, scale: 'sec'},
-        distance: previousSet.distance || {value: 100, scale: 'yrds'}                   
+        distance: previousSet.distance || {value: 100, scale: 'yd'}                   
       };
     case 'activity':
       return {
@@ -32,11 +32,7 @@ function _getDefaultExerciseSet(name, previousSet){
         intensity: previousSet.intensity
       };
     default: 
-      return {
-        name: "",
-        reps: previousSet.reps || 8,
-        weight: previousSet.weight || {value: 100, scale: 'lbs'}                   
-      };
+      return; 
   }
 }
 class ManageWorkoutPage extends React.Component {
@@ -60,7 +56,13 @@ class ManageWorkoutPage extends React.Component {
       },
       saving: false,
       errors: {},
-      customWorkout: ''
+      customWorkout: '',
+      durationOptions: ['sec', 'min'],
+      weightOptions: ['lb', 'kg'],
+      distanceOptions: ['yd', 'mi'],
+      durationScale: 'sec',
+      weightScale: 'lb',
+      distanceScale: 'yd'
     };
 
     this.onNameChange = this.onNameChange.bind(this);
@@ -70,6 +72,7 @@ class ManageWorkoutPage extends React.Component {
     this.onActivityChange = this.onActivityChange.bind(this);
     this.onAddSet = this.onAddSet.bind(this);
     this.onSaveWorkout = this.onSaveWorkout.bind(this);
+    this.onScaleChange = this.onScaleChange.bind(this);
   }
 
   
@@ -131,11 +134,10 @@ class ManageWorkoutPage extends React.Component {
     if((key === 'reps' || key === 'weight') && value.length > 0){
       value = Number.parseFloat(value);
       if(key === 'weight'){
-        newSet.weight.value = value;
-        newSet.weight.scale = dataset.scale;
+        value = {value: value, scale: this.state.weightScale};
       }
-    } else
-      newSet[key] = value;
+    }
+    newSet[key] = value;
 
     const exercise = Object.assign({}, this.state.exercise);
     exercise.sets[0] = newSet;
@@ -149,10 +151,16 @@ class ManageWorkoutPage extends React.Component {
     delete errors.duration;
     delete errors.distance;
 
-    let {name: key, value} = e.target;
+    let {name: key, value, dataset} = e.target;
     const newSet = Object.assign({}, this.state.newSet);
-    if((key === 'duration' || key === 'distance') && value.length > 0)
-      value = Number.parseFloat(value);
+    if((key === 'duration' || key === 'distance') && value.length > 0){
+      let scale;
+      if(key === 'duration')
+        scale = this.state.durationScale;
+      else
+        scale = this.state.distanceScale;
+      value = {value: Number.parseFloat(value), scale: scale};
+    }
     newSet[key] = value;
 
     const exercise = Object.assign({}, this.state.exercise);
@@ -167,10 +175,11 @@ class ManageWorkoutPage extends React.Component {
     delete errors.duration;
     delete errors.intensity;
 
-    let {name: key, value} = e.target;
+    let {name: key, value, dataset} = e.target;
     const newSet = Object.assign({}, this.state.newSet);
-    if((key === 'duration') && value.length > 0)
-      value = Number.parseFloat(value);
+    if((key === 'duration') && value.length > 0){
+      value = {value: Number.parseFloat(value), scale: this.state.durationScale}; 
+    }
     newSet[key] = value;
 
     const exercise = Object.assign({}, this.state.exercise);
@@ -179,12 +188,51 @@ class ManageWorkoutPage extends React.Component {
     return;
   }
 
+
+  onScaleChange(e){
+    let {innerHTML: scale} = e.target;
+    let value, setInfo;
+    switch(scale){
+      case 'sec':
+      case 'min': {
+        value = this.state.newSet.duration.value;
+        setInfo = {duration: {value: value, scale: scale}}
+        this.setState({
+          durationScale: scale
+        });
+        break;
+      }
+      case 'lb':
+      case 'kg':{
+        value = this.state.newSet.weight.value;
+        setInfo = {weight: {value: value, scale: scale}}
+        this.setState({
+          weightScale: scale
+        });
+        break;
+      }
+      case 'yd':
+      case 'mi': {
+      value = this.state.newSet.distance.value;
+      setInfo = {distance: {value: value, scale: scale}}
+      this.setState({
+          distanceScale: scale
+        });
+        break;
+      }
+    }
+    this.setState({
+      newSet: Object.assign({}, this.state.newSet, setInfo),
+    });
+  }
+
   onAddSet(e){
     event.preventDefault();
 
     const workout = Object.assign({}, this.state.workout);
     const newSet = Object.assign({}, this.state.newSet);
     const exercises = workout.exercises;
+    const exercise = Object.assign({}, this.state.exercise);
     
     if(!this.isValidSet(newSet))
       return;
@@ -201,22 +249,19 @@ class ManageWorkoutPage extends React.Component {
     });
     // else push the whole exercise to the list
     if(!sets)
-      exercises.push(this.state.exercise);
+      exercises.push(exercise);
 
     // finnally, update the workout to reflect the new set added
-    this.setState((prevState) => {
-      
+    this.setState((prevState) => {      
       return {
         workout: workout,
         exercise: {
           tag: prevState.exercise.tag,
           type: prevState.exercise.type,
-          sets: [prevState.newSet]
+          sets: []
         }
       };
     });
-    return;
-    // handle errors
   }
 
   onSaveWorkout(e){
@@ -298,10 +343,17 @@ class ManageWorkoutPage extends React.Component {
           onLiftChange={this.onLiftChange} 
           onCardioChange={this.onCardioChange} 
           onActivityChange={this.onActivityChange} 
+          onScaleChange={this.onScaleChange}
           onAddSet={this.onAddSet}
           onSave={this.onSave} 
           errors={this.state.errors}
           saving={this.state.saving}
+          durationOptions={this.state.durationOptions}
+          weightOptions={this.state.weightOptions}
+          distanceOptions={this.state.distanceOptions}
+          durationScale={this.state.durationScale}
+          weightScale={this.state.weightScale}
+          distanceScale={this.state.distanceScale}
         />
   
         <Table

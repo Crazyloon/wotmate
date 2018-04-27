@@ -32,7 +32,9 @@ const initialData = {
     }
   },
   errors: {},
-  customWorkout: ''
+  customWorkout: '',
+  weightOptions: ['lb', 'kg'],
+  weightScale: 'lb',
 };
 
 const spy = sinon.spy();
@@ -41,6 +43,9 @@ const wrapper = shallow(<LiftForm
   {...initialData}
   onLiftChange={spy}
   onAddSet={spy}
+  onScaleChange={spy}
+  weightOptions={initialData.weightOptions}
+  weightScale={initialData.weightScale}
 />);
 
 describe('Lift Form', () =>{
@@ -66,6 +71,9 @@ describe('Lift Form', () =>{
         {...initialData}
         onLiftChange={spy}
         onAddSet={spy}
+        onScaleChange={spy}
+        weightOptions={initialData.weightOptions}
+        weightScale={initialData.weightScale}
       />);
       const componentSpy = sinon.spy(mountedWrapper.instance(), 'onCustomLiftChange');
       let event = {};

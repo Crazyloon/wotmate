@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import SelectInput from '../../shared/SelectInput';
 import TextInput from '../../shared/TextInput';
 import NumberInput from '../../shared/NumberInput';
+import ScalePicker from '../../shared/ScalePicker';
 
 class CardioForm extends React.Component {
   constructor(props){
@@ -97,9 +98,12 @@ class CardioForm extends React.Component {
             min={1}
             max={600}
             step={1}
-            scale={'sec'}
-            error={this.props.errors.duration}
-            />
+            error={this.props.errors.duration}>
+            <ScalePicker
+                  onOptionSelected={this.props.onScaleChange}
+                  scaleOptions={this.props.durationOptions}
+                  selectedOption={this.props.durationScale}/>
+          </NumberInput>
 
           <NumberInput
             wrapperClass={"form-group col-md-6"}
@@ -112,9 +116,13 @@ class CardioForm extends React.Component {
             min={5}
             max={10000}
             step={5}
-            scale={'yrds'}
             error={this.props.errors.distance}
-            />
+          >
+            <ScalePicker
+                  onOptionSelected={this.props.onScaleChange}
+                  scaleOptions={this.props.distanceOptions}
+                  selectedOption={this.props.distanceScale}/>
+          </NumberInput>
         </div>
 
         <div className="button--save__rightAlign">

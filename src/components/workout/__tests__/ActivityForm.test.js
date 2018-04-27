@@ -32,7 +32,9 @@ const initialData = {
     intensity: 'variable'
   },
   errors: {},
-  customWorkout: ''
+  customWorkout: '',
+  durationOptions: ['sec', 'min'],
+  durationScale: 'sec',
 };
 
 const spy = sinon.spy();
@@ -41,6 +43,9 @@ const wrapper = shallow(<ActivityForm
   {...initialData}
   onActivityChange={spy}
   onAddSet={spy}
+  onScaleChange={spy}
+  durationOptions={initialData.durationOptions}
+  durationScale={initialData.durationScale}
 />);
 
 describe('Activity Form', () =>{

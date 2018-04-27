@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import SelectInput from '../../shared/SelectInput';
 import TextInput from '../../shared/TextInput';
 import NumberInput from '../../shared/NumberInput';
+import ScalePicker from '../../shared/ScalePicker';
 
 class LiftForm extends React.Component {
   constructor(props){
     super(props);
-    
     this.state = {
       customLift: {text: '', value: ''},
       errors: {
@@ -82,7 +82,7 @@ class LiftForm extends React.Component {
           </div>
         </div>
 
-        <div className="form-row"> 
+        <div style={{marginTop: '-20px'}} className="form-row"> 
           <NumberInput
             wrapperClass={"form-group col-md-6"}
             name="reps"
@@ -107,10 +107,13 @@ class LiftForm extends React.Component {
             required
             min={5}
             max={1000}
-            step={5}
-            scale={"lbs"}
-            error={this.props.errors.weight}
-            />
+            step={5}            
+            error={this.props.errors.weight}>
+              <ScalePicker
+                  onOptionSelected={this.props.onScaleChange}
+                  scaleOptions={this.props.weightOptions}
+                  selectedOption={this.props.weightScale}/>
+            </NumberInput>
         </div>
 
         <div className="button--save__rightAlign">
@@ -146,7 +149,10 @@ LiftForm.propTypes = {
   }),
   saving: PropTypes.bool,
   onAddSet: PropTypes.func.isRequired,
-  onLiftChange: PropTypes.func.isRequired
+  onLiftChange: PropTypes.func.isRequired,
+  onScaleChange: PropTypes.func.isRequired,
+  weightOptions: PropTypes.array.isRequired,
+  weightScale: PropTypes.string.isRequired
 };
 
 export default LiftForm;

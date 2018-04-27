@@ -35,7 +35,11 @@ const initialData = {
     }
   },
   errors: {},
-  customWorkout: ''
+  customWorkout: '',
+  durationOptions: ['sec', 'min'],
+  distanceOptions: ['yd', 'mi'],
+  durationScale: 'sec',
+  distanceScale: 'yd'
 };
 
 const spy = sinon.spy();
@@ -44,6 +48,11 @@ const wrapper = shallow(<CardioForm
   {...initialData}
   onCardioChange={spy}
   onAddSet={spy}
+  onScaleChange={spy}
+  durationOptions={initialData.durationOptions}
+  distanceOptions={initialData.distanceOptions}
+  durationScale={initialData.durationScale}
+  distanceScale={initialData.distanceScale}
 />);
 
 describe('Cardio Form', () =>{

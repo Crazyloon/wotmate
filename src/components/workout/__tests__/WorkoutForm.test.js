@@ -28,7 +28,13 @@ const initialData = {
   },
   saving: false,
   errors: {},
-  customWorkout: ''
+  customWorkout: '',
+  durationOptions: ['sec', 'min'],
+  weightOptions: ['lb', 'kg'],
+  distanceOptions: ['yd', 'mi'],
+  durationScale: 'sec',
+  weightScale: 'lb',
+  distanceScale: 'yd'
 };
 
 const onChangeMock = jest.fn();
@@ -44,9 +50,16 @@ const mountedWrapper = mount(<WorkoutForm
   onCardioChange={onChangeMock} 
   onActivityChange={onChangeMock} 
   onAddSet={onChangeMock}
-  onSave={onChangeMock} 
+  onScaleChange={onChangeMock}
+  onSave={onChangeMock}
   errors={initialData.errors}
   saving={initialData.saving}
+  durationOptions={initialData.durationOptions}
+  weightOptions={initialData.weightOptions}
+  distanceOptions={initialData.distanceOptions}
+  durationScale={initialData.durationScale}
+  weightScale={initialData.weightScale}
+  distanceScale={initialData.distanceScale}
 />);
 
 describe('Workout Form', () => {
@@ -73,9 +86,16 @@ describe('Workout Form', () => {
         onCardioChange={onChangeMock} 
         onActivityChange={onChangeMock} 
         onAddSet={onChangeMock}
+        onScaleChange={onChangeMock}
         onSave={onChangeMock} 
         errors={initialData.errors}
         saving={initialData.saving}
+        durationOptions={initialData.durationOptions}
+        weightOptions={initialData.weightOptions}
+        distanceOptions={initialData.distanceOptions}
+        durationScale={initialData.durationScale}
+        weightScale={initialData.weightScale}
+        distanceScale={initialData.distanceScale}
       />);
 
       const simulatedInput = {target: {value: 'lift'}};
@@ -95,7 +115,7 @@ describe('Workout Form', () => {
           reps: 8,
           weight: {
             value: 100,
-            scale: 'lbs'
+            scale: 'lb'
           }
         }
       }, () => {mountedWrapper.update();});
@@ -121,7 +141,7 @@ describe('Workout Form', () => {
           },
           distance: {
             value: 100,
-            scale: 'yrds'
+            scale: 'yd'
           }
         }
       }, () => {mountedWrapper.update();});

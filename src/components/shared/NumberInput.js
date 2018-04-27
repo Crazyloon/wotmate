@@ -1,16 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NumberInput = ({wrapperClass, name, label, onChange, placeholder, value, scale, min, max, step, error, required}) => {
+const NumberInput = ({wrapperClass, name, label, onChange, 
+                      placeholder, value, min, max, step,
+                      error, required, children = undefined}) => {
     let controlClass = 'form-control';
     if(error && error.length > 0){
         wrapperClass += " " + 'has-error';
         controlClass += " " + 'is-invalid';
     }
 
+    const labelWrapper = children?
+      (<div className={"form--scale-and-label"}>
+        <label htmlFor={name}>{label}</label>
+        {children}
+      </div>)
+      : <label htmlFor={name}>{label}</label>;
+
     return (
         <div className={wrapperClass}>
-            <label htmlFor={name}>{label}</label>
+            {labelWrapper}
             <div className="form-group">
                 <input
                     className={controlClass}
@@ -22,8 +31,7 @@ const NumberInput = ({wrapperClass, name, label, onChange, placeholder, value, s
                     required={required}
                     min={min}
                     max={max}
-                    step={step}
-                    data-scale={scale}/>
+                    step={step}/>
                 {error && <div className="invalid-feedback">{error}</div>}
             </div>
         </div>

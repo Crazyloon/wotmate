@@ -6,6 +6,20 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <WorkoutForm
     customWorkout=""
+    distanceOptions={
+      Array [
+        "yd",
+        "mi",
+      ]
+    }
+    distanceScale="yd"
+    durationOptions={
+      Array [
+        "sec",
+        "min",
+      ]
+    }
+    durationScale="sec"
     errors={Object {}}
     exercise={
       Object {
@@ -26,7 +40,15 @@ ShallowWrapper {
     onLiftChange={[MockFunction]}
     onNameChange={[MockFunction]}
     onSave={[MockFunction]}
+    onScaleChange={[MockFunction]}
     saving={false}
+    weightOptions={
+      Array [
+        "lb",
+        "kg",
+      ]
+    }
+    weightScale="lb"
     workout={
       Object {
         "date": "",

@@ -4,6 +4,7 @@ import SelectInput from '../../shared/SelectInput';
 import TextInput from '../../shared/TextInput';
 import NumberInput from '../../shared/NumberInput';
 import { workoutIntensity } from '../../../data/api/workoutApi';
+import ScalePicker from '../../shared/ScalePicker';
 
 let intensityOptions = Object.keys(workoutIntensity).map((key, index) =>{
   return {value: workoutIntensity[key], text: workoutIntensity[key]};
@@ -102,9 +103,12 @@ class ActivityForm extends React.Component {
             min={1}
             max={600}
             step={1}
-            scale={'sec'}
-            error={this.props.errors.duration}
-            />
+            error={this.props.errors.duration}>
+            <ScalePicker
+                  onOptionSelected={this.props.onScaleChange}
+                  scaleOptions={this.props.durationOptions}
+                  selectedOption={this.props.durationScale}/>
+          </NumberInput>
 
           <SelectInput
             wrapperClass={"form-group col-md-6"}            
