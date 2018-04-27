@@ -1,4 +1,4 @@
-# wotmate (Workout Tracker Mate)
+# ¿WotMate? (Workout Tracker Mate)
 Personal Workout Tracking Web Application
 ### About:
 This is a personal project I recently started, to learn React. The goal is to develop an application that allows users to quickly track workouts and provide graphical feedback on how they've been progressing. I plan to include charts, saved routines, and exercises, including images and how-to videos or links to them.
