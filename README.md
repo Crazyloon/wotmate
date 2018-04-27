@@ -15,7 +15,7 @@ This is a personal project I recently started, to learn React. The goal is to de
 - Show a list of workouts for each week
 
 
-### Developed with:
+### Notable Tools:
 ##### Front End:
 - ReactDOM v16+
 - Redux v4+
