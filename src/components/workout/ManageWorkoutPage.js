@@ -16,20 +16,20 @@ function _getDefaultExerciseSet(name, previousSet){
     case 'lift': 
       return {
         name: "",
-        reps: previousSet.reps || 8,
-        weight: previousSet.weight || {value: 100, scale: 'lb'}                   
+        reps: (previousSet && previousSet.reps) || 8,
+        weight: (previousSet && previousSet.weight) || {value: 100, scale: 'lb'}                   
       };
     case 'cardio':
       return {
         name: "",
-        duration: previousSet.duration || {value: 30, scale: 'sec'},
-        distance: previousSet.distance || {value: 100, scale: 'yd'}                   
+        duration: (previousSet && previousSet.duration) || {value: 30, scale: 'sec'},
+        distance: (previousSet && previousSet.distance) || {value: 100, scale: 'yd'}                   
       };
     case 'activity':
       return {
         name: "",
-        duration: previousSet.duration || {value: 30, scale: 'sec'},
-        intensity: previousSet.intensity
+        duration: (previousSet && previousSet.duration) || {value: 30, scale: 'sec'},
+        intensity: (previousSet && previousSet.intensity)
       };
     default: 
       return; 
@@ -196,7 +196,7 @@ class ManageWorkoutPage extends React.Component {
       case 'sec':
       case 'min': {
         value = this.state.newSet.duration.value;
-        setInfo = {duration: {value: value, scale: scale}}
+        setInfo = {duration: {value: value, scale: scale}};
         this.setState({
           durationScale: scale
         });
@@ -205,7 +205,7 @@ class ManageWorkoutPage extends React.Component {
       case 'lb':
       case 'kg':{
         value = this.state.newSet.weight.value;
-        setInfo = {weight: {value: value, scale: scale}}
+        setInfo = {weight: {value: value, scale: scale}};
         this.setState({
           weightScale: scale
         });
@@ -214,7 +214,7 @@ class ManageWorkoutPage extends React.Component {
       case 'yd':
       case 'mi': {
       value = this.state.newSet.distance.value;
-      setInfo = {distance: {value: value, scale: scale}}
+      setInfo = {distance: {value: value, scale: scale}};
       this.setState({
           distanceScale: scale
         });

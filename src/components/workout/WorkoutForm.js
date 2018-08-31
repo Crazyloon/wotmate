@@ -68,9 +68,8 @@ const WorkoutForm = ({ workout, exercise, newSet, customWorkout, onNameChange,
 
   return (
     <div className="col-md-8 offset-md-2">
+      <h1>Manage Workout</h1>
       <form className={formClass} noValidate>
-        <h1>Manage Workout</h1>
-
         <TextInput 
           wrapperClass={"form-group"}
           name="name"
@@ -91,6 +90,8 @@ const WorkoutForm = ({ workout, exercise, newSet, customWorkout, onNameChange,
           options={dropDownOptions}
           />
         
+        <hr style={{height: 2, background: 'white', width: '96%'}}/>
+
         {form(exercise.tag)}
       </form>
     </div>

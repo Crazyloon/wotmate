@@ -82,7 +82,7 @@ class LiftForm extends React.Component {
           </div>
         </div>
 
-        <div style={{marginTop: '-20px'}} className="form-row"> 
+        <div className="form-row marginTop__-20"> 
           <NumberInput
             wrapperClass={"form-group col-md-6"}
             name="reps"

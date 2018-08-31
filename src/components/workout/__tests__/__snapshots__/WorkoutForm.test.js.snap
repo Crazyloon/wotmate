@@ -71,179 +71,14 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <form
-        className="needs-validation"
-        noValidate={true}
-      >
+      "children": Array [
         <h1>
           Manage Workout
-        </h1>
-        <TextInput
-          error={undefined}
-          label="Workout Name"
-          name="name"
-          onChange={[MockFunction]}
-          placeholder="Fat Buster"
-          value=""
-          wrapperClass="form-group"
-        />
-        <SelectInput
-          defaultOption="Select Workout Type"
-          error={undefined}
-          label="Type"
-          name="type"
-          onChange={[Function]}
-          options={
-            Array [
-              Object {
-                "text": "Lift",
-                "value": "lift",
-              },
-              Object {
-                "text": "Cardio",
-                "value": "cardio",
-              },
-              Object {
-                "text": "Activity",
-                "value": "activity",
-              },
-            ]
-          }
-          value=""
-          wrapperClass="form-group"
-        />
-      </form>,
-      "className": "col-md-8 offset-md-2",
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <h1>
-            Manage Workout
-          </h1>,
-          <TextInput
-            error={undefined}
-            label="Workout Name"
-            name="name"
-            onChange={[MockFunction]}
-            placeholder="Fat Buster"
-            value=""
-            wrapperClass="form-group"
-          />,
-          <SelectInput
-            defaultOption="Select Workout Type"
-            error={undefined}
-            label="Type"
-            name="type"
-            onChange={[Function]}
-            options={
-              Array [
-                Object {
-                  "text": "Lift",
-                  "value": "lift",
-                },
-                Object {
-                  "text": "Cardio",
-                  "value": "cardio",
-                },
-                Object {
-                  "text": "Activity",
-                  "value": "activity",
-                },
-              ]
-            }
-            value=""
-            wrapperClass="form-group"
-          />,
-          undefined,
-        ],
-        "className": "needs-validation",
-        "noValidate": true,
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Manage Workout",
-          },
-          "ref": null,
-          "rendered": "Manage Workout",
-          "type": "h1",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "error": undefined,
-            "label": "Workout Name",
-            "name": "name",
-            "onChange": [MockFunction],
-            "placeholder": "Fat Buster",
-            "value": "",
-            "wrapperClass": "form-group",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "defaultOption": "Select Workout Type",
-            "error": undefined,
-            "label": "Type",
-            "name": "type",
-            "onChange": [Function],
-            "options": Array [
-              Object {
-                "text": "Lift",
-                "value": "lift",
-              },
-              Object {
-                "text": "Cardio",
-                "value": "cardio",
-              },
-              Object {
-                "text": "Activity",
-                "value": "activity",
-              },
-            ],
-            "value": "",
-            "wrapperClass": "form-group",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        undefined,
-      ],
-      "type": "form",
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <form
+        </h1>,
+        <form
           className="needs-validation"
           noValidate={true}
         >
-          <h1>
-            Manage Workout
-          </h1>
           <TextInput
             error={undefined}
             label="Workout Name"
@@ -278,19 +113,38 @@ ShallowWrapper {
             value=""
             wrapperClass="form-group"
           />
+          <hr
+            style={
+              Object {
+                "background": "white",
+                "height": 2,
+                "width": "96%",
+              }
+            }
+          />
         </form>,
-        "className": "col-md-8 offset-md-2",
+      ],
+      "className": "col-md-8 offset-md-2",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Manage Workout",
+        },
+        "ref": null,
+        "rendered": "Manage Workout",
+        "type": "h1",
       },
-      "ref": null,
-      "rendered": Object {
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <h1>
-              Manage Workout
-            </h1>,
             <TextInput
               error={undefined}
               label="Workout Name"
@@ -325,6 +179,15 @@ ShallowWrapper {
               value=""
               wrapperClass="form-group"
             />,
+            <hr
+              style={
+                Object {
+                  "background": "white",
+                  "height": 2,
+                  "width": "96%",
+                }
+              }
+            />,
             undefined,
           ],
           "className": "needs-validation",
@@ -332,17 +195,6 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Manage Workout",
-            },
-            "ref": null,
-            "rendered": "Manage Workout",
-            "type": "h1",
-          },
           Object {
             "instance": null,
             "key": undefined,
@@ -391,10 +243,226 @@ ShallowWrapper {
             "rendered": null,
             "type": [Function],
           },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "style": Object {
+                "background": "white",
+                "height": 2,
+                "width": "96%",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "hr",
+          },
           undefined,
         ],
         "type": "form",
       },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h1>
+            Manage Workout
+          </h1>,
+          <form
+            className="needs-validation"
+            noValidate={true}
+          >
+            <TextInput
+              error={undefined}
+              label="Workout Name"
+              name="name"
+              onChange={[MockFunction]}
+              placeholder="Fat Buster"
+              value=""
+              wrapperClass="form-group"
+            />
+            <SelectInput
+              defaultOption="Select Workout Type"
+              error={undefined}
+              label="Type"
+              name="type"
+              onChange={[Function]}
+              options={
+                Array [
+                  Object {
+                    "text": "Lift",
+                    "value": "lift",
+                  },
+                  Object {
+                    "text": "Cardio",
+                    "value": "cardio",
+                  },
+                  Object {
+                    "text": "Activity",
+                    "value": "activity",
+                  },
+                ]
+              }
+              value=""
+              wrapperClass="form-group"
+            />
+            <hr
+              style={
+                Object {
+                  "background": "white",
+                  "height": 2,
+                  "width": "96%",
+                }
+              }
+            />
+          </form>,
+        ],
+        "className": "col-md-8 offset-md-2",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Manage Workout",
+          },
+          "ref": null,
+          "rendered": "Manage Workout",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <TextInput
+                error={undefined}
+                label="Workout Name"
+                name="name"
+                onChange={[MockFunction]}
+                placeholder="Fat Buster"
+                value=""
+                wrapperClass="form-group"
+              />,
+              <SelectInput
+                defaultOption="Select Workout Type"
+                error={undefined}
+                label="Type"
+                name="type"
+                onChange={[Function]}
+                options={
+                  Array [
+                    Object {
+                      "text": "Lift",
+                      "value": "lift",
+                    },
+                    Object {
+                      "text": "Cardio",
+                      "value": "cardio",
+                    },
+                    Object {
+                      "text": "Activity",
+                      "value": "activity",
+                    },
+                  ]
+                }
+                value=""
+                wrapperClass="form-group"
+              />,
+              <hr
+                style={
+                  Object {
+                    "background": "white",
+                    "height": 2,
+                    "width": "96%",
+                  }
+                }
+              />,
+              undefined,
+            ],
+            "className": "needs-validation",
+            "noValidate": true,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "error": undefined,
+                "label": "Workout Name",
+                "name": "name",
+                "onChange": [MockFunction],
+                "placeholder": "Fat Buster",
+                "value": "",
+                "wrapperClass": "form-group",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "defaultOption": "Select Workout Type",
+                "error": undefined,
+                "label": "Type",
+                "name": "type",
+                "onChange": [Function],
+                "options": Array [
+                  Object {
+                    "text": "Lift",
+                    "value": "lift",
+                  },
+                  Object {
+                    "text": "Cardio",
+                    "value": "cardio",
+                  },
+                  Object {
+                    "text": "Activity",
+                    "value": "activity",
+                  },
+                ],
+                "value": "",
+                "wrapperClass": "form-group",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "style": Object {
+                  "background": "white",
+                  "height": 2,
+                  "width": "96%",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "hr",
+            },
+            undefined,
+          ],
+          "type": "form",
+        },
+      ],
       "type": "div",
     },
   ],
