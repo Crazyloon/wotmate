@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 
 const About = () => {
@@ -25,4 +26,16 @@ const About = () => {
   );
 }; 
 
+=======
+import React from 'react';
+
+const About = () => {
+  return (
+    <div>
+      About Component
+    </div>
+  );
+}; 
+
+>>>>>>> fc2641cb0f23a39a3e85159a617b456835d0b532
 export default About;
